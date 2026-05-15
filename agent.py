@@ -122,14 +122,12 @@ TAGS_EN = ["AI Comparison", "AI Tutorial", "AI News", "AI Tips", "AI Review"]
 def call_nvidia(prompt, lang="vi"):
     """Gọi NVIDIA NIM API để sinh nội dung"""
     system_prompt = (
-        "Bạn là một blogger công nghệ chuyên nghiệp. "
-        "Viết bài blog chi tiết, dễ hiểu, giọng văn tự nhiên, chuẩn SEO. "
-        "Độ dài: 800-1500 từ. Có tiêu đề (h2, h3), in đậm những ý chính, "
-        "dùng bullet points, highlight box cho kết luận quan trọng." if lang == "vi" else
-        "You are a professional tech blogger. "
-        "Write detailed, easy-to-understand blog posts with natural tone, SEO-optimized. "
-        "Length: 800-1500 words. Use headings (h2, h3), bold for key points, "
-        "bullet points, highlight boxes for important conclusions."
+        "Bạn là blogger công nghệ. Viết bài blog 500-800 từ, dễ hiểu, chuẩn SEO. "
+        "Dùng h2, h3, in đậm ý chính, bullet points. "
+        "Kết thúc bằng highlight box tóm tắt." if lang == "vi" else
+        "You are a tech blogger. Write 500-800 word SEO-optimized blog posts. "
+        "Use h2, h3, bold key points, bullet lists. "
+        "End with a highlight summary box."
     )
 
     full_prompt = f"{system_prompt}\n\nChủ đề: {prompt}\n\nHãy viết bài blog hoàn chỉnh."
@@ -138,7 +136,7 @@ def call_nvidia(prompt, lang="vi"):
         "model": NVIDIA_MODEL,
         "messages": [{"role": "user", "content": full_prompt}],
         "temperature": 0.8,
-        "max_tokens": 3000,
+        "max_tokens": 2000,
         "top_p": 0.95
     }
 
@@ -150,7 +148,7 @@ def call_nvidia(prompt, lang="vi"):
     ]
 
     try:
-        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=120)
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=300)
         out = result.stdout.decode('utf-8')
         resp = json.loads(out)
         content = resp["choices"][0]["message"]["content"]
