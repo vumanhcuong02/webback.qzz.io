@@ -150,8 +150,9 @@ def call_nvidia(prompt, lang="vi"):
     ]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
-        resp = json.loads(result.stdout)
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=120)
+        out = result.stdout.decode('utf-8')
+        resp = json.loads(out)
         content = resp["choices"][0]["message"]["content"]
         return content
     except Exception as e:
@@ -381,13 +382,14 @@ def git_push():
     """Push code lên GitHub"""
     try:
         os.chdir(LOCAL_DIR)
-        subprocess.run(["git", "add", "."], check=True, capture_output=True)
-        subprocess.run(["git", "commit", "-m", f"AI agent: Them bai viet {datetime.now().strftime('%Y-%m-%d %H:%M')}"], check=True, capture_output=True)
-        subprocess.run(["git", "push"], check=True, capture_output=True)
+        subprocess.run(["git", "add", "."], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["git", "commit", "-m", f"AI agent: Them bai viet {datetime.now().strftime('%Y-%m-%d %H:%M')}"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["git", "push"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print("✅ Push thành công lên GitHub")
         return True
     except subprocess.CalledProcessError as e:
-        print(f"⚠️ Git push: {e.stderr.decode() if e.stderr else 'nothing to commit'}")
+        err = e.stderr.decode('utf-8') if e.stderr else 'nothing to commit'
+        print(f"⚠️ Git push: {err}")
         return False
 
 
@@ -417,10 +419,10 @@ def main():
 
     # Clone/pull repo
     if not os.path.exists(LOCAL_DIR):
-        subprocess.run(["git", "clone", GITHUB_REPO, LOCAL_DIR], check=True)
+        subprocess.run(["git", "clone", GITHUB_REPO, LOCAL_DIR], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     else:
         os.chdir(LOCAL_DIR)
-        subprocess.run(["git", "pull"], check=True, capture_output=True)
+        subprocess.run(["git", "pull"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     # Chọn ngẫu nhiên chủ đề
     lang = random.choices(["vi", "en"], weights=[2, 1])[0]  # ưu tiên tiếng Việt
