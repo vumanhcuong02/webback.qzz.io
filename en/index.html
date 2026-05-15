@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ninh Hòa Blog - Công Nghệ & AI - So sánh, Review và Hướng dẫn</title>
-    <meta name="description" content="Ninh Hòa Blog - Khám phá thế giới công nghệ AI qua các bài so sánh, review và hướng dẫn chi tiết. Cập nhật xu hướng AI mới nhất mỗi ngày.">
-    <meta name="keywords" content="AI, công nghệ, ChatGPT, Claude, Gemini, review AI, so sánh AI, hướng dẫn AI">
+    <title>Ninh Hoa Blog - Technology & AI</title>
+    <meta name="description" content="Ninh Hoa Blog - Discover the world of AI through detailed comparisons, reviews, and tutorials. Updated daily.">
+    <meta name="keywords" content="AI, technology, ChatGPT, Claude, Gemini, AI review, AI comparison, AI tutorial">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://webback.qzz.io/">
+    <link rel="canonical" href="https://webback.qzz.io/en/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Ninh Hòa Blog - Công Nghệ & AI">
-    <meta property="og:description" content="Khám phá thế giới công nghệ AI qua các bài so sánh, review và hướng dẫn chi tiết.">
-    <meta property="og:url" content="https://webback.qzz.io/">
+    <meta property="og:title" content="Ninh Hoa Blog - Technology & AI">
+    <meta property="og:description" content="Discover the world of AI through detailed comparisons, reviews, and tutorials.">
+    <meta property="og:url" content="https://webback.qzz.io/en/">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="vi_VN">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ninh Hòa Blog - Công Nghệ & AI">
+    <meta property="og:locale" content="en_US">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -37,14 +33,10 @@
     {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "Ninh Hòa Blog",
-        "description": "Blog về công nghệ AI, so sánh và hướng dẫn chi tiết",
-        "url": "https://webback.qzz.io/",
-        "inLanguage": "vi",
-        "author": {
-            "@type": "Person",
-            "name": "Ninh Hòa Blog"
-        }
+        "name": "Ninh Hoa Blog",
+        "description": "Technology & AI blog with detailed comparisons, reviews, and tutorials",
+        "url": "https://webback.qzz.io/en/",
+        "inLanguage": "en"
     }
     </script>
 
@@ -60,16 +52,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.7; }
-
-        /* Header */
         .site-header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f3460 100%); color: white; padding: 0; position: relative; overflow: hidden; }
         .site-header::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
         .nav-bar { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 16px 24px; position: relative; }
         .nav-bar .logo { font-size: 1.4em; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: white; }
         .nav-bar .logo span { color: #38bdf8; }
-        .nav-bar .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-bar .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
         .nav-bar .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9em; font-weight: 500; transition: color 0.2s; }
         .nav-bar .nav-links a:hover { color: white; }
+        .lang-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 8px; font-size: 0.85em; }
         .header-content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; text-align: center; position: relative; }
         .header-content h1 { font-size: 3em; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; line-height: 1.15; }
         .header-content h1 span { background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -78,11 +69,7 @@
         .header-content .search-bar input { width: 100%; padding: 14px 20px; border: none; border-radius: 12px; font-size: 1em; background: rgba(255,255,255,0.1); color: white; backdrop-filter: blur(10px); outline: none; transition: all 0.3s; }
         .header-content .search-bar input::placeholder { color: rgba(255,255,255,0.4); }
         .header-content .search-bar input:focus { background: rgba(255,255,255,0.18); box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3); }
-
-        /* Container */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-        /* Featured post */
         .featured-section { margin-top: -40px; position: relative; z-index: 2; }
         .featured-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 30px -5px rgba(0,0,0,0.1); display: flex; transition: all 0.3s; }
         .featured-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); }
@@ -96,15 +83,11 @@
         .featured-card p { color: #475569; margin-bottom: 20px; font-size: 0.95em; }
         .featured-card .read-btn { display: inline-flex; align-items: center; gap: 8px; background: #0f172a; color: white; padding: 10px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: all 0.2s; }
         .featured-card .read-btn:hover { background: #1e293b; transform: translateX(3px); }
-
-        /* Section title */
         .section-title { display: flex; align-items: center; justify-content: space-between; margin: 48px 0 24px; }
         .section-title h2 { font-size: 1.5em; font-weight: 700; color: #0f172a; }
         .section-title h2 i { color: #38bdf8; margin-right: 8px; }
         .section-title .view-all { color: #2563eb; text-decoration: none; font-size: 0.9em; font-weight: 500; }
         .section-title .view-all:hover { text-decoration: underline; }
-
-        /* Post grid */
         .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
         .post-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.3s; border: 1px solid #f1f5f9; display: flex; flex-direction: column; }
         .post-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -8px rgba(0,0,0,0.1); border-color: #e2e8f0; }
@@ -119,14 +102,10 @@
         .post-card .read-more { color: #2563eb; font-weight: 600; font-size: 0.85em; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
         .post-card .read-more:hover { gap: 8px; }
         .post-card .read-time { color: #94a3b8; font-size: 0.78em; }
-
-        /* Categories */
         .categories { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
         .categories a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #475569; font-size: 0.85em; font-weight: 500; transition: all 0.2s; }
         .categories a:hover, .categories a.active { background: #0f172a; color: white; border-color: #0f172a; }
         .categories a i { font-size: 0.9em; }
-
-        /* Newsletter */
         .newsletter { background: linear-gradient(135deg, #0f172a, #1e293b); border-radius: 20px; padding: 50px 40px; text-align: center; margin: 50px 0; color: white; }
         .newsletter h3 { font-size: 1.5em; margin-bottom: 8px; }
         .newsletter p { color: rgba(255,255,255,0.6); margin-bottom: 20px; font-size: 0.95em; }
@@ -134,8 +113,6 @@
         .newsletter .news-form input { flex: 1; padding: 14px 18px; border: none; border-radius: 10px; font-size: 0.95em; outline: none; }
         .newsletter .news-form button { padding: 14px 28px; background: #38bdf8; color: #0f172a; border: none; border-radius: 10px; font-weight: 700; font-size: 0.9em; cursor: pointer; transition: all 0.2s; }
         .newsletter .news-form button:hover { background: #7dd3fc; }
-
-        /* Footer */
         .site-footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 24px 30px; margin-top: 60px; }
         .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
         .footer-inner h4 { color: white; font-size: 1em; margin-bottom: 14px; }
@@ -145,18 +122,12 @@
         .footer-inner ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85em; }
         .footer-inner ul a:hover { color: white; }
         .footer-bottom { max-width: 1100px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 0.8em; }
-
-        /* Empty state */
         .empty-state { text-align: center; padding: 60px 20px; color: #94a3b8; }
         .empty-state i { font-size: 3em; margin-bottom: 16px; color: #cbd5e1; }
         .empty-state h3 { color: #64748b; margin-bottom: 8px; }
-
-        /* Loading */
         .loading-state { text-align: center; padding: 60px; }
         .spinner { width: 36px; height: 36px; border: 3px solid #e2e8f0; border-top-color: #2563eb; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
         @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .header-content h1 { font-size: 2em; }
             .nav-bar .nav-links { display: none; }
@@ -167,87 +138,74 @@
             .newsletter .news-form { flex-direction: column; }
             .footer-inner { grid-template-columns: 1fr; gap: 24px; }
         }
-        @media (max-width: 480px) {
-            .header-content { padding: 40px 20px 60px; }
-            .featured-card .featured-body { padding: 20px; }
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="site-header">
         <nav class="nav-bar">
-            <a href="/" class="logo">Ninh Hòa <span>Blog</span></a>
+            <a href="/en/" class="logo">Ninh Hoa <span>Blog</span></a>
             <ul class="nav-links">
-                <li><a href="/">Trang chủ</a></li>
-                <li><a href="#categories">Chuyên mục</a></li>
-                <li><a href="#newsletter">Liên hệ</a></li>
-                <li><a href="/en/" class="lang-btn"><i class="fas fa-globe"></i> English</a></li>
+                <li><a href="/en/">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#newsletter">Contact</a></li>
+                <li><a href="/" class="lang-btn"><i class="fas fa-globe"></i> Tiếng Việt</a></li>
             </ul>
         </nav>
         <div class="header-content">
-            <h1>Khám phá <span>thế giới AI</span> mỗi ngày</h1>
-            <p>So sánh, review và hướng dẫn chi tiết về các công cụ AI, công nghệ mới nhất giúp bạn làm việc thông minh hơn.</p>
+            <h1>Explore the <span>World of AI</span> Daily</h1>
+            <p>In-depth comparisons, reviews, and tutorials about AI tools and the latest technology to help you work smarter.</p>
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm bài viết..." oninput="filterPosts(this.value)">
+                <input type="text" id="searchInput" placeholder="Search articles..." oninput="filterPosts(this.value)">
             </div>
         </div>
     </header>
 
-    <!-- Main -->
     <main class="container">
-        <!-- Featured -->
-        <section class="featured-section" id="featured">
-            <!-- Featured post loaded via JS -->
-        </section>
+        <section class="featured-section" id="featured"></section>
 
-        <!-- Categories -->
         <section id="categories">
             <div class="categories" id="category-filter">
-                <a href="#" class="active" data-cat="all" onclick="filterByCategory('all', this); return false;"><i class="fas fa-th-large"></i> Tất cả</a>
+                <a href="#" class="active" data-cat="all" onclick="filterByCategory('all', this); return false;"><i class="fas fa-th-large"></i> All</a>
             </div>
         </section>
 
-        <!-- Posts -->
         <section>
             <div class="section-title">
-                <h2><i class="fas fa-newspaper"></i> Bài viết mới nhất</h2>
-                <a href="#" class="view-all">Xem tất cả →</a>
+                <h2><i class="fas fa-newspaper"></i> Latest Articles</h2>
+                <a href="#" class="view-all">View all →</a>
             </div>
             <div class="post-grid" id="post-grid">
-                <div class="loading-state"><div class="spinner"></div><p>Đang tải bài viết...</p></div>
+                <div class="loading-state"><div class="spinner"></div><p>Loading articles...</p></div>
             </div>
         </section>
 
-        <!-- Newsletter -->
         <section class="newsletter" id="newsletter">
-            <h3>📩 Nhận bài viết mới qua email</h3>
-            <p>Đăng ký để không bỏ lỡ bất kỳ bài viết hay nào về công nghệ và AI.</p>
-            <form class="news-form" action="#" onsubmit="alert('Cảm ơn bạn đã đăng ký!'); return false;">
-                <input type="email" placeholder="Nhập email của bạn..." required>
-                <button type="submit">Đăng ký</button>
+            <h3>📩 Get New Articles via Email</h3>
+            <p>Subscribe to never miss any great articles about technology and AI.</p>
+            <form class="news-form" action="#" onsubmit="alert('Thank you for subscribing!'); return false;">
+                <input type="email" placeholder="Enter your email..." required>
+                <button type="submit">Subscribe</button>
             </form>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div>
-                <h4>📖 Về Ninh Hòa Blog</h4>
-                <p>Blog chia sẻ kiến thức về công nghệ AI, giúp bạn dễ dàng tiếp cận và ứng dụng AI vào công việc hàng ngày. Tự động cập nhật nội dung mới mỗi ngày.</p>
+                <h4>📖 About Ninh Hoa Blog</h4>
+                <p>A blog sharing knowledge about AI technology, helping you easily access and apply AI in your daily work. Content automatically updated daily.</p>
             </div>
             <div>
-                <h4>🔗 Chuyên mục</h4>
+                <h4>🔗 Categories</h4>
                 <ul id="footer-categories">
-                    <li><a href="#">So sánh AI</a></li>
-                    <li><a href="#">Hướng dẫn</a></li>
-                    <li><a href="#">Review</a></li>
-                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">AI Comparison</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">News</a></li>
                 </ul>
             </div>
             <div>
-                <h4>📞 Liên hệ</h4>
+                <h4>📞 Contact</h4>
                 <ul>
                     <li><a href="#">Email</a></li>
                     <li><a href="#">Facebook</a></li>
@@ -256,7 +214,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Ninh Hòa Blog. Tự động vận hành bởi AI.</p>
+            <p>&copy; 2025 Ninh Hoa Blog. Powered by AI.</p>
         </div>
     </footer>
 
@@ -264,7 +222,6 @@
         let allPosts = [];
         let currentCategory = 'all';
 
-        // Load posts
         fetch('posts.json')
             .then(r => {
                 if (!r.ok) throw new Error('Failed to load posts');
@@ -278,7 +235,7 @@
             })
             .catch(() => {
                 document.getElementById('post-grid').innerHTML =
-                    '<div class="empty-state"><i class="fas fa-inbox"></i><h3>Chưa có bài viết nào</h3><p>Bài viết đầu tiên sẽ sớm được đăng tải.</p></div>';
+                    '<div class="empty-state"><i class="fas fa-inbox"></i><h3>No articles yet</h3><p>The first article will be posted soon.</p></div>';
                 document.getElementById('featured').innerHTML = '';
             });
 
@@ -288,14 +245,14 @@
             const el = document.getElementById('featured');
             el.innerHTML = `<div class="featured-card">
                 <div class="featured-body">
-                    <span class="featured-badge">🔥 Nổi bật</span>
+                    <span class="featured-badge">🔥 Featured</span>
                     <div class="meta">
                         <span><i class="far fa-calendar"></i> ${featured.date}</span>
                         <span><i class="fas fa-tag"></i> ${featured.tag}</span>
                     </div>
                     <h2><a href="${featured.slug}.html">${featured.title}</a></h2>
                     <p>${featured.description}</p>
-                    <a class="read-btn" href="${featured.slug}.html">Đọc ngay <i class="fas fa-arrow-right"></i></a>
+                    <a class="read-btn" href="${featured.slug}.html">Read now <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>`;
         }
@@ -316,7 +273,7 @@
         function renderPosts(posts) {
             const grid = document.getElementById('post-grid');
             if (!posts.length) {
-                grid.innerHTML = '<div class="empty-state"><i class="fas fa-search"></i><h3>Không tìm thấy bài viết</h3></div>';
+                grid.innerHTML = '<div class="empty-state"><i class="fas fa-search"></i><h3>No articles found</h3></div>';
                 return;
             }
             grid.innerHTML = posts.map(p => `
@@ -328,8 +285,8 @@
                     <h3><a href="${p.slug}.html">${p.title}</a></h3>
                     <p>${p.description}</p>
                     <div class="card-footer">
-                        <a class="read-more" href="${p.slug}.html">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
-                        <span class="read-time"><i class="far fa-clock"></i> ${Math.ceil(p.description.length / 200)} phút đọc</span>
+                        <a class="read-more" href="${p.slug}.html">Read more <i class="fas fa-arrow-right"></i></a>
+                        <span class="read-time"><i class="far fa-clock"></i> ${Math.ceil(p.description.length / 200)} min read</span>
                     </div>
                 </article>
             `).join('');
