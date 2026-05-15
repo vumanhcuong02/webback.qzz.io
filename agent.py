@@ -17,8 +17,8 @@ from datetime import datetime
 
 # === CẤU HÌNH ===
 GITHUB_REPO = "https://github.com/vumanhcuong02/webback.qzz.io.git"
-LOCAL_DIR = "/home/opc/webback"
-NVIDIA_API_KEY = "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"
+LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
+NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY", "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")
 NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
 NVIDIA_MODEL = "deepseek-ai/deepseek-v4-flash"
 
@@ -380,6 +380,8 @@ def git_push():
     """Push code lên GitHub"""
     try:
         os.chdir(LOCAL_DIR)
+        subprocess.run(["git", "config", "user.email", "agent@ninhhoa.blog"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["git", "config", "user.name", "AI Agent"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "add", "."], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "commit", "-m", f"AI agent: Them bai viet {datetime.now().strftime('%Y-%m-%d %H:%M')}"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "push"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -415,13 +417,7 @@ def main():
     print("="*50)
     print(f"🤖 AI Agent - Bắt đầu: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    # Clone/pull repo
-    if not os.path.exists(LOCAL_DIR):
-        subprocess.run(["git", "clone", GITHUB_REPO, LOCAL_DIR], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    else:
-        os.chdir(LOCAL_DIR)
-        subprocess.run(["git", "pull"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
+    # Không cần clone/pull — GitHub Actions đã checkout sẵn
     # Chọn ngẫu nhiên chủ đề
     lang = random.choices(["vi", "en"], weights=[2, 1])[0]  # ưu tiên tiếng Việt
 
