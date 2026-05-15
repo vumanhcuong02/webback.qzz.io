@@ -22,7 +22,7 @@ jobs:
 
       - name: Run AI Agent
         env:
-          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_KEY }}
         run: |
           python agent.py
 
