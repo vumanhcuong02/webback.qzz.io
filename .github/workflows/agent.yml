@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GHPAT }}
         with:
           fetch-depth: 0
 
@@ -24,7 +24,7 @@ jobs:
 
       - name: Run AI Agent
         env:
-          NVIDIA_API_KEY: ${{ secrets.NVIDIA_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIAKEY }}
         run: |
           python agent.py
 
@@ -36,4 +36,4 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "AI agent: auto commit $(date +'%Y-%m-%d %H:%M')"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GHPAT }}
