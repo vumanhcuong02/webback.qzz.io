@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GHPAT }}
-        with:
           fetch-depth: 0
 
       - name: Setup Python
