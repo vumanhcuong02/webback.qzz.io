@@ -121,6 +121,9 @@ TAGS_EN = ["AI Comparison", "AI Tutorial", "AI News", "AI Tips", "AI Review"]
 
 def call_nvidia(prompt, lang="vi"):
     """Gọi NVIDIA NIM API để sinh nội dung"""
+    import urllib.request as request
+    import urllib.error
+
     system_prompt = (
         "Bạn là blogger công nghệ. Viết bài blog 500-800 từ, dễ hiểu, chuẩn SEO. "
         "Dùng h2, h3, in đậm ý chính, bullet points. "
@@ -132,26 +135,22 @@ def call_nvidia(prompt, lang="vi"):
 
     full_prompt = f"{system_prompt}\n\nChủ đề: {prompt}\n\nHãy viết bài blog hoàn chỉnh."
 
-    data = {
+    data = json.dumps({
         "model": NVIDIA_MODEL,
         "messages": [{"role": "user", "content": full_prompt}],
         "temperature": 0.8,
-        "max_tokens": 2000,
+        "max_tokens": 1500,
         "top_p": 0.95
-    }
+    }).encode('utf-8')
 
-    cmd = [
-        "curl", "-s", NVIDIA_URL,
-        "-H", f"Authorization: Bearer {NVIDIA_API_KEY}",
-        "-H", "Content-Type: application/json",
-        "-d", json.dumps(data)
-    ]
+    req = request.Request(NVIDIA_URL, data=data, method='POST')
+    req.add_header('Authorization', f'Bearer {NVIDIA_API_KEY}')
+    req.add_header('Content-Type', 'application/json')
 
     try:
-        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=300)
-        out = result.stdout.decode('utf-8')
-        resp = json.loads(out)
-        content = resp["choices"][0]["message"]["content"]
+        resp = request.urlopen(req, timeout=120)
+        resp_data = json.loads(resp.read().decode('utf-8'))
+        content = resp_data["choices"][0]["message"]["content"]
         return content
     except Exception as e:
         print(f"Lỗi gọi API: {e}")
