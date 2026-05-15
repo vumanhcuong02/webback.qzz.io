@@ -20,7 +20,7 @@ GITHUB_REPO = "https://github.com/vumanhcuong02/webback.qzz.io.git"
 LOCAL_DIR = "/home/opc/webback"
 NVIDIA_API_KEY = "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"
 NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
-NVIDIA_MODEL = "deepseek-ai/deepseek-v4-pro"
+NVIDIA_MODEL = "deepseek-ai/deepseek-v4-flash"
 
 # Danh sách chủ đề linh hoạt
 TOPICS_VI = [
