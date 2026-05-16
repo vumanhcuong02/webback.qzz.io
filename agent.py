@@ -20,7 +20,7 @@ GITHUB_REPO = "https://github.com/vumanhcuong02/webback.qzz.io.git"
 LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
 NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY", "")
 NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
-NVIDIA_MODEL = "minimaxai/minimax-m2.7"
+NVIDIA_MODEL = "meta/llama-3.3-70b-instruct"
 
 # Danh sách chủ đề linh hoạt
 TOPICS_VI = [
@@ -154,7 +154,11 @@ def call_nvidia(prompt, lang="vi"):
         with urllib.request.urlopen(req, timeout=240, context=ctx) as resp:
             result = json.loads(resp.read())
             msg = result["choices"][0]["message"]
-            return msg.get("content") or msg.get("reasoning_content") or ""
+            content = msg.get("content") or msg.get("reasoning_content") or ""
+            if not content:
+                print("API returned no content, skipping...")
+                return None
+            return content
     except Exception as e:
         print(f"Lỗi gọi API: {e}")
         return None
