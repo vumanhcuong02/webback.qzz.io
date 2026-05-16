@@ -183,7 +183,6 @@ def html_to_plain_text(html_text):
 
 def create_html_article(content, title, tag, date_str, slug, lang="vi"):
     """Tạo file HTML từ nội dung"""
-    # Chuẩn bị meta
     if lang == "vi":
         site_title = "Ninh Hòa Blog - Công Nghệ & AI"
         lang_code = "vi"
@@ -195,61 +194,54 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
         back_text = "← Back to home"
         og_locale = "en_US"
 
-    # Xử lý nội dung (markdown to HTML đơn giản)
-    # KHÔNG escape trước khi parse markdown vì sẽ phá vỡ cú pháp
-    body = content
+    body = content.strip()
 
-    # Chuyển markdown cơ bản sang HTML
-    lines = body.split('\n')
-    html_lines = []
-    in_list = False
-    for line in lines:
-        # Headers
-        if line.startswith('### '):
-            if in_list: html_lines.append('</ul>'); in_list = False
-            html_lines.append(f'<h3>{html.escape(line[4:])}</h3>')
-        elif line.startswith('## '):
-            if in_list: html_lines.append('</ul>'); in_list = False
-            html_lines.append(f'<h2>{html.escape(line[3:])}</h2>')
-        elif line.startswith('# '):
-            if in_list: html_lines.append('</ul>'); in_list = False
-            html_lines.append(f'<h1>{html.escape(line[2:])}</h1>')
-        # Bold/italic
-        elif '**' in line:
-            if in_list: html_lines.append('</ul>'); in_list = False
-            line = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', line)
-            # Highlight box
-            if 'Kết luận' in line or 'Tóm lại' in line or 'Conclusion' in line or 'Summary' in line:
-                html_lines.append(f'<div class="highlight">{line}</div>')
+    if body.startswith('<') or '<h' in body or '<p>' in body or '<strong>' in body:
+        body_html = body
+    else:
+        lines = body.split('\n')
+        html_lines = []
+        in_list = False
+        for line in lines:
+            if line.startswith('### '):
+                if in_list: html_lines.append('</ul>'); in_list = False
+                html_lines.append(f'<h3>{html.escape(line[4:])}</h3>')
+            elif line.startswith('## '):
+                if in_list: html_lines.append('</ul>'); in_list = False
+                html_lines.append(f'<h2>{html.escape(line[3:])}</h2>')
+            elif line.startswith('# '):
+                if in_list: html_lines.append('</ul>'); in_list = False
+                html_lines.append(f'<h1>{html.escape(line[2:])}</h1>')
+            elif '**' in line:
+                if in_list: html_lines.append('</ul>'); in_list = False
+                line = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', line)
+                if 'Kết luận' in line or 'Tóm lại' in line or 'Conclusion' in line or 'Summary' in line:
+                    html_lines.append(f'<div class="highlight">{line}</div>')
+                else:
+                    html_lines.append(f'<p>{line}</p>')
+            elif line.startswith('- ') or line.startswith('* '):
+                if not in_list:
+                    html_lines.append('<ul>')
+                    in_list = True
+                html_lines.append(f'<li>{html.escape(line[2:])}</li>')
+            elif line.startswith('1. ') or line.startswith('2. '):
+                if not in_list:
+                    html_lines.append('<ol>')
+                    in_list = True
+                html_lines.append(f'<li>{html.escape(line[3:])}</li>')
+            elif line.strip() == '':
+                if in_list:
+                    html_lines.append('</ul>')
+                    in_list = False
             else:
-                html_lines.append(f'<p>{html.escape(line)}</p>')
-        # List items
-        elif line.startswith('- ') or line.startswith('* '):
-            if not in_list:
-                html_lines.append('<ul>')
-                in_list = True
-            html_lines.append(f'<li>{html.escape(line[2:])}</li>')
-        elif line.startswith('1. ') or line.startswith('2. '):
-            if not in_list:
-                html_lines.append('<ol>')
-                in_list = True
-            html_lines.append(f'<li>{html.escape(line[3:])}</li>')
-        elif line.strip() == '':
-            if in_list:
-                html_lines.append('</ul>')
-                in_list = False
-            html_lines.append('')
-        else:
-            if in_list: html_lines.append('</ul>'); in_list = False
-            # Check for highlight box
-            if 'Kết luận' in line or 'Tóm lại' in line or 'Tổng kết' in line or 'Conclusion' in line or 'Summary' in line:
-                html_lines.append(f'<div class="highlight">{html.escape(line)}</div>')
-            else:
-                html_lines.append(f'<p>{html.escape(line)}</p>')
-    if in_list:
-        html_lines.append('</ul>')
-
-    body_html = '\n'.join(html_lines)
+                if in_list: html_lines.append('</ul>'); in_list = False
+                if 'Kết luận' in line or 'Tóm lại' in line or 'Kết luận' in line or 'Conclusion' in line or 'Summary' in line:
+                    html_lines.append(f'<div class="highlight">{line}</div>')
+                else:
+                    html_lines.append(f'<p>{line}</p>')
+        if in_list:
+            html_lines.append('</ul>')
+        body_html = '\n'.join(html_lines)
 
     description = html_to_plain_text(content)[:160]
 
