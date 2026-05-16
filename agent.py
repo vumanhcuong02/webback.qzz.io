@@ -18,9 +18,9 @@ from datetime import datetime
 # === CẤU HÌNH ===
 GITHUB_REPO = "https://github.com/vumanhcuong02/webback.qzz.io.git"
 LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
-NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY", "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")
+NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY", "")
 NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
-NVIDIA_MODEL = "deepseek-ai/deepseek-v4-flash"
+NVIDIA_MODEL = "minimaxai/minimax-m2.7"
 
 # Danh sách chủ đề linh hoạt
 TOPICS_VI = [
@@ -121,6 +121,9 @@ TAGS_EN = ["AI Comparison", "AI Tutorial", "AI News", "AI Tips", "AI Review"]
 
 def call_nvidia(prompt, lang="vi"):
     """Gọi NVIDIA NIM API để sinh nội dung"""
+    import urllib.request
+    import ssl
+
     system_prompt = (
         "Bạn là blogger công nghệ. Viết 1 bài blog 300-500 từ, dễ hiểu, chuẩn SEO. "
         "Dùng h2, h3, in đậm ý chính, bullet points, 1 highlight box cuối bài." if lang == "vi" else
@@ -129,22 +132,29 @@ def call_nvidia(prompt, lang="vi"):
     )
     full_prompt = f"{system_prompt}\n\nChủ đề: {prompt}\n\nViết bài blog hoàn chỉnh."
 
-    cmd = [
-        "curl", "-s", "-m", "120", NVIDIA_URL,
-        "-H", f"Authorization: Bearer {NVIDIA_API_KEY}",
-        "-H", "Content-Type: application/json",
-        "-d", json.dumps({
-            "model": NVIDIA_MODEL,
-            "messages": [{"role": "user", "content": full_prompt[:2000]}],
-            "temperature": 0.8, "max_tokens": 1200, "top_p": 0.95
-        })
-    ]
+    payload = {
+        "model": NVIDIA_MODEL,
+        "messages": [{"role": "user", "content": full_prompt[:2000]}],
+        "temperature": 0.8,
+        "max_tokens": 1200,
+        "top_p": 0.95
+    }
+
     try:
-        import subprocess as sp
-        r = sp.run(cmd, stdout=sp.PIPE, stderr=sp.PIPE, timeout=150)
-        out = r.stdout.decode('utf-8', errors='replace')
-        resp = json.loads(out)
-        return resp["choices"][0]["message"]["content"]
+        req = urllib.request.Request(
+            NVIDIA_URL,
+            data=json.dumps(payload).encode(),
+            headers={
+                "Authorization": f"Bearer {NVIDIA_API_KEY}",
+                "Content-Type": "application/json"
+            },
+            method="POST"
+        )
+        ctx = ssl.create_default_context()
+        with urllib.request.urlopen(req, timeout=240, context=ctx) as resp:
+            result = json.loads(resp.read())
+            msg = result["choices"][0]["message"]
+            return msg.get("content") or msg.get("reasoning_content") or ""
     except Exception as e:
         print(f"Lỗi gọi API: {e}")
         return None
@@ -182,8 +192,8 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
         og_locale = "en_US"
 
     # Xử lý nội dung (markdown to HTML đơn giản)
-    body = html.escape(content)
-    body = content  # keep original markdown for now
+    # KHÔNG escape trước khi parse markdown vì sẽ phá vỡ cú pháp
+    body = content
 
     # Chuyển markdown cơ bản sang HTML
     lines = body.split('\n')
@@ -193,13 +203,13 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
         # Headers
         if line.startswith('### '):
             if in_list: html_lines.append('</ul>'); in_list = False
-            html_lines.append(f'<h3>{line[4:]}</h3>')
+            html_lines.append(f'<h3>{html.escape(line[4:])}</h3>')
         elif line.startswith('## '):
             if in_list: html_lines.append('</ul>'); in_list = False
-            html_lines.append(f'<h2>{line[3:]}</h2>')
+            html_lines.append(f'<h2>{html.escape(line[3:])}</h2>')
         elif line.startswith('# '):
             if in_list: html_lines.append('</ul>'); in_list = False
-            html_lines.append(f'<h2>{line[2:]}</h2>')
+            html_lines.append(f'<h1>{html.escape(line[2:])}</h1>')
         # Bold/italic
         elif '**' in line:
             if in_list: html_lines.append('</ul>'); in_list = False
@@ -208,18 +218,18 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
             if 'Kết luận' in line or 'Tóm lại' in line or 'Conclusion' in line or 'Summary' in line:
                 html_lines.append(f'<div class="highlight">{line}</div>')
             else:
-                html_lines.append(f'<p>{line}</p>')
+                html_lines.append(f'<p>{html.escape(line)}</p>')
         # List items
         elif line.startswith('- ') or line.startswith('* '):
             if not in_list:
                 html_lines.append('<ul>')
                 in_list = True
-            html_lines.append(f'<li>{line[2:]}</li>')
+            html_lines.append(f'<li>{html.escape(line[2:])}</li>')
         elif line.startswith('1. ') or line.startswith('2. '):
             if not in_list:
                 html_lines.append('<ol>')
                 in_list = True
-            html_lines.append(f'<li>{line[3:]}</li>')
+            html_lines.append(f'<li>{html.escape(line[3:])}</li>')
         elif line.strip() == '':
             if in_list:
                 html_lines.append('</ul>')
@@ -229,9 +239,9 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
             if in_list: html_lines.append('</ul>'); in_list = False
             # Check for highlight box
             if 'Kết luận' in line or 'Tóm lại' in line or 'Tổng kết' in line or 'Conclusion' in line or 'Summary' in line:
-                html_lines.append(f'<div class="highlight">{line}</div>')
+                html_lines.append(f'<div class="highlight">{html.escape(line)}</div>')
             else:
-                html_lines.append(f'<p>{line}</p>')
+                html_lines.append(f'<p>{html.escape(line)}</p>')
     if in_list:
         html_lines.append('</ul>')
 
