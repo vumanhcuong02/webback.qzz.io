@@ -181,6 +181,26 @@ def html_to_plain_text(html_text):
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
 
+def clean_content(content):
+    """Clean content - remove markdown separators and fix common issues"""
+    lines = content.split('\n')
+    cleaned = []
+    for line in lines:
+        stripped = line.strip()
+        # Skip markdown separators
+        if re.match(r'^[=\-*]{3,}$', stripped):
+            continue
+        # Skip lines that are just HTML comment markers
+        if stripped.startswith('<!--') and stripped.endswith('-->'):
+            continue
+        # If line has HTML tags, keep as-is but strip extra whitespace
+        if '<' in stripped and '>' in stripped:
+            cleaned.append(stripped)
+        elif stripped:
+            cleaned.append(stripped)
+    return '\n'.join(cleaned)
+
+
 def create_html_article(content, title, tag, date_str, slug, lang="vi"):
     """Tạo file HTML từ nội dung"""
     if lang == "vi":
@@ -188,17 +208,35 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
         lang_code = "vi"
         back_text = "← Về trang chủ"
         og_locale = "vi_VN"
+        home_link = "/"
+        read_time = f"{(len(content)//1000)+1} phút đọc"
+        footer_text = "Tự động vận hành bởi AI."
+        share_text = "Chia sẻ bài viết"
+        zalo_text = "Zalo"
+        facebook_text = "Facebook"
+        twitter_text = "Twitter"
     else:
         site_title = "Ninh Hoa Blog - Technology & AI"
         lang_code = "en"
         back_text = "← Back to home"
         og_locale = "en_US"
+        home_link = "/en/"
+        read_time = f"{(len(content)//1000)+1} min read"
+        footer_text = "Powered by AI."
+        share_text = "Share this article"
+        zalo_text = "Zalo"
+        facebook_text = "Facebook"
+        twitter_text = "Twitter"
 
-    body = content.strip()
+    body = clean_content(content).strip()
 
-    if body.startswith('<') or '<h' in body or '<p>' in body or '<strong>' in body:
+    # Check if content has HTML tags - if so, use as-is with minimal processing
+    if '<' in body and '>' in body:
+        # Content already has HTML, clean it up but don't escape
+        # Remove any remaining markdown bold syntax that's not inside tags
         body_html = body
     else:
+        # Pure markdown - convert to HTML
         lines = body.split('\n')
         html_lines = []
         in_list = False
@@ -247,8 +285,10 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
 
     if lang == "vi":
         canonical = f"https://webback.qzz.io/{slug}.html"
+        article_url = f"https://webback.qzz.io/{slug}.html"
     else:
         canonical = f"https://webback.qzz.io/en/{slug}.html"
+        article_url = f"https://webback.qzz.io/en/{slug}.html"
 
     html_template = f"""<!DOCTYPE html>
 <html lang="{lang_code}">
@@ -261,6 +301,8 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
     <meta property="og:locale" content="{og_locale}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{article_url}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -282,15 +324,23 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
         .article strong {{ color: #0f172a; }}
         .article .highlight {{ background: #eef2ff; border-left: 4px solid #4338ca; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; color: #1e293b; font-weight: 500; }}
         .article a {{ color: #2563eb; }}
+        .share-section {{ margin-top: 40px; padding-top: 25px; border-top: 1px solid #f1f5f9; }}
+        .share-section p {{ font-weight: 600; color: #0f172a; margin-bottom: 12px; font-size: 0.95em; }}
+        .share-buttons {{ display: flex; gap: 10px; flex-wrap: wrap; }}
+        .share-btn {{ display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; color: white; transition: opacity 0.2s; }}
+        .share-btn:hover {{ opacity: 0.85; }}
+        .share-btn.zalo {{ background: #0068FF; }}
+        .share-btn.facebook {{ background: #1877F2; }}
+        .share-btn.twitter {{ background: #1DA1F2; }}
         .footer {{ text-align: center; padding: 30px; color: #94a3b8; font-size: 0.85em; }}
         .lang-switch {{ display: inline-block; background: #eef2ff; color: #4338ca; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; margin-top: 10px; }}
-        @media (max-width: 600px) {{ .article {{ padding: 24px; }} .article h1 {{ font-size: 1.4em; }} }}
+        @media (max-width: 600px) {{ .article {{ padding: 24px; }} .article h1 {{ font-size: 1.4em; }} .share-buttons {{ flex-direction: column; }} }}
     </style>
 </head>
 <body>
     <div class="article-header">
-        <p><a href="/{'en' if lang == 'en' else ''}">{back_text}</a></p>
-        <a class="lang-switch" href="/{'en/' if lang == 'vi' else ''}{slug}.html">
+        <p><a href="{home_link}">{back_text}</a></p>
+        <a class="lang-switch" href="{'/en/' if lang == 'vi' else ''}{slug}.html">
             <i class="fas fa-globe"></i> {'English' if lang == 'vi' else 'Tiếng Việt'}
         </a>
     </div>
@@ -300,14 +350,28 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
             <div class="meta">
                 <span><i class="far fa-calendar"></i> {date_str}</span>
                 <span><i class="fas fa-tag"></i> {tag}</span>
-                <span><i class="far fa-clock"></i> {(len(content)//1000)+1} phút đọc</span>
+                <span><i class="far fa-clock"></i> {read_time}</span>
             </div>
             {body_html}
+            <div class="share-section">
+                <p>{share_text}</p>
+                <div class="share-buttons">
+                    <a href="https://zalo.me/share?url={article_url}" target="_blank" rel="noopener" class="share-btn zalo">
+                        <i class="fab fa-zalo"></i> {zalo_text}
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={article_url}" target="_blank" rel="noopener" class="share-btn facebook">
+                        <i class="fab fa-facebook-f"></i> {facebook_text}
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url={article_url}&text={title}" target="_blank" rel="noopener" class="share-btn twitter">
+                        <i class="fab fa-twitter"></i> {twitter_text}
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer">
-        <p>&copy; 2025 Ninh Hòa Blog. {'Tự động vận hành bởi AI.' if lang == 'vi' else 'Powered by AI.'}</p>
-        <p><a href="/{'en/' if lang == 'en' else ''}" style="color:#2563eb;">{'← Về trang chủ' if lang == 'vi' else '← Back to home'}</a></p>
+        <p>&copy; 2025 Ninh Hòa Blog. {footer_text}</p>
+        <p><a href="{home_link}" style="color:#2563eb;">{'← Về trang chủ' if lang == 'vi' else '← Back to home'}</a></p>
     </div>
 </body>
 </html>"""
