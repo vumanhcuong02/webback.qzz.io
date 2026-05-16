@@ -334,6 +334,8 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
         .article h1 {{ font-size: 2em; margin-bottom: 10px; line-height: 1.3; }}
         .article .meta {{ display: flex; gap: 16px; color: #64748b; font-size: 0.9em; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9; }}
         .article .meta i {{ margin-right: 4px; }}
+        .article .featured-image {{ margin-bottom: 30px; border-radius: 12px; overflow: hidden; }}
+        .article .featured-image img {{ width: 100%; height: auto; display: block; }}
         .article p {{ margin-bottom: 18px; color: #475569; }}
         .article h2 {{ font-size: 1.4em; margin: 35px 0 15px; color: #0f172a; }}
         .article h3 {{ font-size: 1.15em; margin: 25px 0 12px; color: #1e293b; }}
@@ -370,6 +372,7 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
                 <span><i class="fas fa-tag"></i> {tag}</span>
                 <span><i class="far fa-clock"></i> {read_time}</span>
             </div>
+            <div class="featured-image"><img src="https://picsum.photos/800/400?random={slug}" alt="{title}"></div>
             {body_html}
             <div class="share-section">
                 <p>{share_text}</p>
