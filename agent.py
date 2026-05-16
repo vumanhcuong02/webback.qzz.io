@@ -125,10 +125,10 @@ def call_nvidia(prompt, lang="vi"):
     import ssl
 
     system_prompt = (
-        "Bạn là blogger công nghệ. Viết 1 bài blog 300-500 từ, dễ hiểu, chuẩn SEO. "
-        "Dùng h2, h3, in đậm ý chính, bullet points, 1 highlight box cuối bài." if lang == "vi" else
-        "You are a tech blogger. Write 1 blog post 300-500 words, SEO-friendly. "
-        "Use h2, h3, bold key points, bullet lists, 1 highlight box at end."
+        "Bạn là blogger công nghệ VIỆT NAM. Viết bài blog HOÀN TOÀN bằng TIẾNG VIỆT, 300-500 từ, dễ hiểu, chuẩn SEO. "
+        "Dùng h2, h3, in đậm ý chính bằng **text**, bullet points bằng - item, 1 highlight box cuối bài. KHÔNG dùng tiếng Anh trong nội dung." if lang == "vi" else
+        "You are a tech blogger in the UNITED STATES. Write blog posts COMPLETELY IN ENGLISH, 300-500 words, SEO-friendly. "
+        "Use h2, h3, bold key points with **text**, bullet points with - item, 1 highlight box at end. NEVER use Vietnamese in content."
     )
     full_prompt = f"{system_prompt}\n\nChủ đề: {prompt}\n\nViết bài blog hoàn chỉnh."
 
