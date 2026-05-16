@@ -125,12 +125,30 @@ def call_nvidia(prompt, lang="vi"):
     import ssl
 
     system_prompt = (
-        "Bạn là blogger công nghệ VIỆT NAM. Viết bài blog HOÀN TOÀN bằng TIẾNG VIỆT, 300-500 từ, dễ hiểu, chuẩn SEO. "
-        "Dùng h2, h3, in đậm ý chính bằng **text**, bullet points bằng - item, 1 highlight box cuối bài. KHÔNG dùng tiếng Anh trong nội dung." if lang == "vi" else
-        "You are a tech blogger in the UNITED STATES. Write blog posts COMPLETELY IN ENGLISH, 300-500 words, SEO-friendly. "
-        "Use h2, h3, bold key points with **text**, bullet points with - item, 1 highlight box at end. NEVER use Vietnamese in content."
+        "Bạn là một blogger công nghệ chuyên nghiệp người Việt Nam. VIẾT BÀI BLOG HOÀN TOÀN BẰNG TIẾNG VIỆT, tự nhiên như người Việt viết, 400-600 từ.\n\n"
+        "QUY TẮC NGHIÊM NGẶT:\n"
+        "1. Viết giọng văn tự nhiên, thân thiện, có cảm xúc\n"
+        "2. Dùng h2 cho tiêu đề phụ, h3 cho mục nhỏ hơn\n"
+        "3. Dùng **text** để in đậm từ khóa quan trọng\n"
+        "4. Dùng - cho bullet points (ví dụ: - Lợi ích chính)\n"
+        "5. Highlight box (kết luận) đặt cuối bài, bắt đầu bằng '💡' hoặc '**Kết luận**'\n"
+        "6. KHÔNG dùng dấu === hoặc --- làm divider\n"
+        "7. KHÔNG dùng tiếng Anh trong nội dung (chỉ tên công cệ nổi tiếng như ChatGPT, Claude được giữ nguyên)\n"
+        "8. Mỗi đoạn 2-4 câu, không quá dài\n\n"
+        "CHỦ ĐỀ: " if lang == "vi" else
+        "You are a professional US tech blogger. Write COMPLETELY IN ENGLISH, 400-600 words, natural and engaging.\n\n"
+        "STRICT RULES:\n"
+        "1. Write in natural, conversational American English tone\n"
+        "2. Use h2 for subtitles, h3 for sub-sections\n"
+        "3. Use **text** to bold key terms\n"
+        "4. Use - for bullet points\n"
+        "5. End with highlight box starting with '💡' or '**Conclusion**'\n"
+        "6. NO === or --- separators\n"
+        "7. NEVER mix in Vietnamese\n"
+        "8. Keep paragraphs 2-4 sentences short\n\n"
+        "TOPIC: "
     )
-    full_prompt = f"{system_prompt}\n\nChủ đề: {prompt}\n\nViết bài blog hoàn chỉnh."
+    full_prompt = f"{system_prompt}{prompt}\n\nWrite a complete blog post."
 
     payload = {
         "model": NVIDIA_MODEL,
