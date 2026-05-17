@@ -3,262 +3,752 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ninh Hòa Blog - Công Nghệ & AI - So sánh, Review và Hướng dẫn</title>
-    <meta name="description" content="Ninh Hòa Blog - Khám phá thế giới công nghệ AI qua các bài so sánh, review và hướng dẫn chi tiết. Cập nhật xu hướng AI mới nhất mỗi ngày.">
-    <meta name="keywords" content="AI, công nghệ, ChatGPT, Claude, Gemini, review AI, so sánh AI, hướng dẫn AI">
+    <title>Ninh Hoa Blog - Trí Tuệ Nhân Tạo & Công Nghệ</title>
+    <meta name="description" content="Khám phá thế giới AI và công nghệ qua các bài viết chuyên sâu. So sánh ChatGPT, Claude, Gemini, hướng dẫn sử dụng AI hiệu quả.">
+    <meta name="keywords" content="AI, ChatGPT, Claude, Gemini, công nghệ, trí tuệ nhân tạo, hướng dẫn AI">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="Ninh Hoa Blog">
     <link rel="canonical" href="https://webback.qzz.io/">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="alternate" hreflang="vi" href="https://webback.qzz.io/">
+    <link rel="alternate" hreflang="en" href="https://webback.qzz.io/en/">
+    <link rel="alternate" hreflang="x-default" href="https://webback.qzz.io/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2338bdf8'/><stop offset='100%25' style='stop-color:%23818cf8'/></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23g)'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white'>AI</text></svg>">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Ninh Hòa Blog - Công Nghệ & AI">
-    <meta property="og:description" content="Khám phá thế giới công nghệ AI qua các bài so sánh, review và hướng dẫn chi tiết.">
+    <meta property="og:title" content="Ninh Hoa Blog - Trí Tuệ Nhân Tạo & Công Nghệ">
+    <meta property="og:description" content="Khám phá thế giới AI và công nghệ qua các bài viết chuyên sâu.">
     <meta property="og:url" content="https://webback.qzz.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="vi_VN">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ninh Hòa Blog - Công Nghệ & AI">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXX1');
-    </script>
-
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="XXXXXX1" />
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Ninh Hòa Blog",
-        "description": "Blog về công nghệ AI, so sánh và hướng dẫn chi tiết",
-        "url": "https://webback.qzz.io/",
-        "inLanguage": "vi",
-        "author": {
-            "@type": "Person",
-            "name": "Ninh Hòa Blog"
-        }
-    }
-    </script>
-
-    <link rel="alternate" hreflang="vi" href="https://webback.qzz.io/" />
-    <link rel="alternate" hreflang="en" href="https://webback.qzz.io/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://webback.qzz.io/" />
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #818cf8;
+            --accent: #38bdf8;
+            --dark: #0f172a;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-500: #64748b;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --white: #ffffff;
+            --success: #10b981;
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #818cf8 100%);
+            --gradient-dark: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.7; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-100);
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
 
         /* Header */
-        .site-header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f3460 100%); color: white; padding: 0; position: relative; overflow: hidden; }
-        .site-header::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
-        .nav-bar { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 16px 24px; position: relative; }
-        .nav-bar .logo { font-size: 1.4em; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: white; }
-        .nav-bar .logo span { color: #38bdf8; }
-        .nav-bar .nav-links { display: flex; gap: 24px; list-style: none; }
-        .nav-bar .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9em; font-weight: 500; transition: color 0.2s; }
-        .nav-bar .nav-links a:hover { color: white; }
-        .header-content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; text-align: center; position: relative; }
-        .header-content h1 { font-size: 3em; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; line-height: 1.15; }
-        .header-content h1 span { background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .header-content p { font-size: 1.15em; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 24px; }
-        .header-content .search-bar { max-width: 500px; margin: 0 auto; }
-        .header-content .search-bar input { width: 100%; padding: 14px 20px; border: none; border-radius: 12px; font-size: 1em; background: rgba(255,255,255,0.1); color: white; backdrop-filter: blur(10px); outline: none; transition: all 0.3s; }
-        .header-content .search-bar input::placeholder { color: rgba(255,255,255,0.4); }
-        .header-content .search-bar input:focus { background: rgba(255,255,255,0.18); box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3); }
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-300);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-        /* Container */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-        /* Featured post */
-        .featured-section { margin-top: -40px; position: relative; z-index: 2; }
-        .featured-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 30px -5px rgba(0,0,0,0.1); display: flex; transition: all 0.3s; }
-        .featured-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); }
-        .featured-card .featured-body { padding: 40px; flex: 1; }
-        .featured-card .featured-badge { display: inline-block; background: linear-gradient(135deg, #38bdf8, #818cf8); color: white; font-size: 0.75em; font-weight: 600; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .featured-card h2 { font-size: 1.6em; margin-bottom: 12px; line-height: 1.3; }
-        .featured-card h2 a { color: #0f172a; text-decoration: none; }
-        .featured-card h2 a:hover { color: #2563eb; }
-        .featured-card .meta { display: flex; gap: 16px; color: #64748b; font-size: 0.85em; margin-bottom: 14px; }
-        .featured-card .meta i { margin-right: 4px; }
-        .featured-card p { color: #475569; margin-bottom: 20px; font-size: 0.95em; }
-        .featured-card .read-btn { display: inline-flex; align-items: center; gap: 8px; background: #0f172a; color: white; padding: 10px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: all 0.2s; }
-        .featured-card .read-btn:hover { background: #1e293b; transform: translateX(3px); }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-        /* Section title */
-        .section-title { display: flex; align-items: center; justify-content: space-between; margin: 48px 0 24px; }
-        .section-title h2 { font-size: 1.5em; font-weight: 700; color: #0f172a; }
-        .section-title h2 i { color: #38bdf8; margin-right: 8px; }
-        .section-title .view-all { color: #2563eb; text-decoration: none; font-size: 0.9em; font-weight: 500; }
-        .section-title .view-all:hover { text-decoration: underline; }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span { color: var(--primary); }
+
+        .nav { display: flex; align-items: center; gap: 32px; }
+
+        .nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            transition: color 0.2s;
+        }
+
+        .nav a:hover, .nav a.active { color: var(--primary); }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--gray-100);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: all 0.2s;
+        }
+
+        .lang-toggle:hover { background: var(--gray-300); }
+
+        .mobile-menu { display: none; }
+
+        /* Hero */
+        .hero {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 80px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Main */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Section header */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .section-title i { color: var(--primary); margin-right: 8px; }
+
+        /* Filter tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 8px 16px;
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
 
         /* Post grid */
-        .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-        .post-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.3s; border: 1px solid #f1f5f9; display: flex; flex-direction: column; }
-        .post-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -8px rgba(0,0,0,0.1); border-color: #e2e8f0; }
-        .post-card .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .post-card .tag { display: inline-block; background: #eef2ff; color: #4338ca; font-size: 0.75em; font-weight: 600; padding: 3px 12px; border-radius: 20px; }
-        .post-card .date { color: #94a3b8; font-size: 0.8em; }
-        .post-card h3 { font-size: 1.15em; margin-bottom: 10px; line-height: 1.4; flex: 1; }
-        .post-card h3 a { color: #0f172a; text-decoration: none; }
-        .post-card h3 a:hover { color: #2563eb; }
-        .post-card p { color: #64748b; font-size: 0.88em; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .post-card .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid #f1f5f9; }
-        .post-card .read-more { color: #2563eb; font-weight: 600; font-size: 0.85em; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
-        .post-card .read-more:hover { gap: 8px; }
-        .post-card .read-time { color: #94a3b8; font-size: 0.78em; }
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
 
-        /* Categories */
-        .categories { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
-        .categories a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #475569; font-size: 0.85em; font-weight: 500; transition: all 0.2s; }
-        .categories a:hover, .categories a.active { background: #0f172a; color: white; border-color: #0f172a; }
-        .categories a i { font-size: 0.9em; }
+        .post-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--gray-100);
+        }
+
+        .post-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+
+        .post-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .post-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-title:hover { color: var(--primary); }
+
+        .post-excerpt {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .post-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .post-date {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        .post-read {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .post-read:hover { gap: 8px; }
+
+        /* Featured post */
+        .featured-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-300);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 48px;
+            transition: all 0.3s;
+        }
+
+        .featured-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            width: fit-content;
+            margin-bottom: 16px;
+        }
+
+        .featured-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .featured-title:hover { color: var(--primary); }
+
+        .featured-excerpt {
+            font-size: 1rem;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+
+        .featured-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 24px;
+            width: fit-content;
+            transition: all 0.2s;
+        }
+
+        .featured-cta:hover { background: var(--primary-dark); gap: 12px; }
 
         /* Newsletter */
-        .newsletter { background: linear-gradient(135deg, #0f172a, #1e293b); border-radius: 20px; padding: 50px 40px; text-align: center; margin: 50px 0; color: white; }
-        .newsletter h3 { font-size: 1.5em; margin-bottom: 8px; }
-        .newsletter p { color: rgba(255,255,255,0.6); margin-bottom: 20px; font-size: 0.95em; }
-        .newsletter .news-form { display: flex; gap: 10px; max-width: 450px; margin: 0 auto; }
-        .newsletter .news-form input { flex: 1; padding: 14px 18px; border: none; border-radius: 10px; font-size: 0.95em; outline: none; }
-        .newsletter .news-form button { padding: 14px 28px; background: #38bdf8; color: #0f172a; border: none; border-radius: 10px; font-weight: 700; font-size: 0.9em; cursor: pointer; transition: all 0.2s; }
-        .newsletter .news-form button:hover { background: #7dd3fc; }
+        .newsletter {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            border: 1px solid var(--gray-300);
+            margin-top: 48px;
+        }
+
+        .newsletter h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .newsletter p {
+            color: var(--gray-500);
+            margin-bottom: 24px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 1px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .newsletter-form input:focus { border-color: var(--primary); }
+
+        .newsletter-form button {
+            padding: 14px 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .newsletter-form button:hover { background: var(--primary-dark); }
 
         /* Footer */
-        .site-footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 24px 30px; margin-top: 60px; }
-        .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-        .footer-inner h4 { color: white; font-size: 1em; margin-bottom: 14px; }
-        .footer-inner p { font-size: 0.85em; line-height: 1.8; }
-        .footer-inner ul { list-style: none; }
-        .footer-inner ul li { margin-bottom: 8px; }
-        .footer-inner ul a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85em; }
-        .footer-inner ul a:hover { color: white; }
-        .footer-bottom { max-width: 1100px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 0.8em; }
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 24px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+        }
+
+        .footer-brand h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .footer-social a:hover { background: var(--primary); }
+
+        .footer-col h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col li { margin-bottom: 10px; }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--accent); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
 
         /* Empty state */
-        .empty-state { text-align: center; padding: 60px 20px; color: #94a3b8; }
-        .empty-state i { font-size: 3em; margin-bottom: 16px; color: #cbd5e1; }
-        .empty-state h3 { color: #64748b; margin-bottom: 8px; }
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--gray-500);
+        }
+
+        .empty-state i { font-size: 3rem; margin-bottom: 16px; color: var(--gray-300); }
+        .empty-state h3 { margin-bottom: 8px; color: var(--gray-700); }
 
         /* Loading */
-        .loading-state { text-align: center; padding: 60px; }
-        .spinner { width: 36px; height: 36px; border: 3px solid #e2e8f0; border-top-color: #2563eb; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gray-300);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 12px;
+        }
+
         @keyframes spin { to { transform: rotate(360deg); } }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .header-content h1 { font-size: 2em; }
-            .nav-bar .nav-links { display: none; }
-            .featured-card { flex-direction: column; }
-            .featured-card .featured-body { padding: 24px; }
-            .featured-card h2 { font-size: 1.2em; }
-            .post-grid { grid-template-columns: 1fr; }
-            .newsletter .news-form { flex-direction: column; }
-            .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+        @media (max-width: 900px) {
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-image { height: 250px; min-height: auto; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .post-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
         }
-        @media (max-width: 480px) {
-            .header-content { padding: 40px 20px 60px; }
-            .featured-card .featured-body { padding: 20px; }
+
+        @media (max-width: 600px) {
+            .nav { display: none; }
+            .mobile-menu { display: block; font-size: 1.5rem; color: var(--gray-700); }
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { gap: 24px; }
+            .stat-number { font-size: 1.8rem; }
+            .section-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .newsletter { padding: 32px 20px; }
+            .newsletter-form { flex-direction: column; }
+            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+            .post-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="site-header">
-        <nav class="nav-bar">
-            <a href="/" class="logo">Ninh Hòa <span>Blog</span></a>
-            <ul class="nav-links">
-                <li><a href="/">Trang chủ</a></li>
-                <li><a href="#categories">Chuyên mục</a></li>
-                <li><a href="#newsletter">Liên hệ</a></li>
-                <li><a href="/en/" class="lang-btn"><i class="fas fa-globe"></i> English</a></li>
-            </ul>
-        </nav>
-        <div class="header-content">
-            <h1>Khám phá <span>thế giới AI</span> mỗi ngày</h1>
-            <p>So sánh, review và hướng dẫn chi tiết về các công cụ AI, công nghệ mới nhất giúp bạn làm việc thông minh hơn.</p>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm bài viết..." oninput="filterPosts(this.value)">
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">Ninh<span>Ho</span>a Blog</div>
+            </a>
+            <nav class="nav">
+                <a href="/" class="active">Trang chu</a>
+                <a href="/about.html">Gioi thieu</a>
+                <a href="/en/">English</a>
+                <a href="/en/" class="lang-toggle">
+                    <i class="fas fa-globe"></i> English
+                </a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <!-- Main -->
-    <main class="container">
-        <!-- Featured -->
-        <section class="featured-section" id="featured">
-            <!-- Featured post loaded via JS -->
-        </section>
-
-        <!-- Categories -->
-        <section id="categories">
-            <div class="categories" id="category-filter">
-                <a href="#" class="active" data-cat="all" onclick="filterByCategory('all', this); return false;"><i class="fas fa-th-large"></i> Tất cả</a>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i>
+                Cap nhat moi ngay
             </div>
-        </section>
+            <h1>Khám phá <span>Trí Tuệ Nhân Tạo</span><br> và Công nghệ tương lai</h1>
+            <p>Bài viết chuyên sâu về AI, so sánh các công cụ ChatGPT, Claude, Gemini và hướng dẫn ứng dụng AI vào công việc.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Bài viết</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Cập nhật/ngày</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Tự động</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main class="main">
+        <!-- Featured post -->
+        <div class="featured-card" id="featured-post">
+            <!-- Loaded via JS -->
+        </div>
 
         <!-- Posts -->
-        <section>
-            <div class="section-title">
-                <h2><i class="fas fa-newspaper"></i> Bài viết mới nhất</h2>
-                <a href="#" class="view-all">Xem tất cả →</a>
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-fire"></i> Bài viết mới nhất
+            </h2>
+            <div class="filter-tabs" id="filter-tabs">
+                <button class="filter-tab active" data-cat="all">Tất cả</button>
             </div>
-            <div class="post-grid" id="post-grid">
-                <div class="loading-state"><div class="spinner"></div><p>Đang tải bài viết...</p></div>
+        </div>
+
+        <div class="post-grid" id="post-grid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Đang tải bài viết...</p>
             </div>
-        </section>
+        </div>
 
         <!-- Newsletter -->
-        <section class="newsletter" id="newsletter">
-            <h3>📩 Nhận bài viết mới qua email</h3>
-            <p>Đăng ký để không bỏ lỡ bất kỳ bài viết hay nào về công nghệ và AI.</p>
-            <form class="news-form" action="#" onsubmit="alert('Cảm ơn bạn đã đăng ký!'); return false;">
+        <div class="newsletter">
+            <h3>Nhận bài viết mới qua email</h3>
+            <p>Đăng ký để không bỏ lỡ bất kỳ bài viết nào về AI và công nghệ.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký!');">
                 <input type="email" placeholder="Nhập email của bạn..." required>
                 <button type="submit">Đăng ký</button>
             </form>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="footer-inner">
-            <div>
-                <h4>📖 Về Ninh Hòa Blog</h4>
-                <p>Blog chia sẻ kiến thức về công nghệ AI, giúp bạn dễ dàng tiếp cận và ứng dụng AI vào công việc hàng ngày. Tự động cập nhật nội dung mới mỗi ngày.</p>
+            <div class="footer-brand">
+                <h4>Ninh Hoa Blog</h4>
+                <p>Blog chia sẻ kiến thức về AI và công nghệ, giúp bạn dễ dàng tiếp cận và ứng dụng trí tuệ nhân tạo vào công việc hàng ngày.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-            <div>
-                <h4>🔗 Chuyên mục</h4>
-                <ul id="footer-categories">
-                    <li><a href="#">So sánh AI</a></li>
-                    <li><a href="#">Hướng dẫn</a></li>
-                    <li><a href="#">Review</a></li>
-                    <li><a href="#">Tin tức</a></li>
+            <div class="footer-col">
+                <h5>Bài viết</h5>
+                <ul>
+                    <li><a href="/?cat=so-sanh">So sánh AI</a></li>
+                    <li><a href="/?cat=huong-dan">Hướng dẫn</a></li>
+                    <li><a href="/?cat=tin-tuc">Tin tức</a></li>
+                    <li><a href="/?cat=review">Review</a></li>
                 </ul>
             </div>
-            <div>
-                <h4>📞 Liên hệ</h4>
+            <div class="footer-col">
+                <h5>Liên kết</h5>
                 <ul>
-                    <li><a href="#">Email</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">YouTube</a></li>
+                    <li><a href="/about.html">Giới thiệu</a></li>
+                    <li><a href="/en/">English</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Liên hệ</h5>
+                <ul>
+                    <li><a href="mailto:contact@webback.qzz.io">contact@webback.qzz.io</a></li>
+                    <li><a href="https://webback.qzz.io">webback.qzz.io</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Ninh Hòa Blog. Tự động vận hành bởi AI.</p>
+            <p>© 2025 Ninh Hoa Blog. Tự động vận hành bởi AI.</p>
         </div>
     </footer>
 
@@ -268,50 +758,48 @@
 
         // Load posts
         fetch('posts.json')
-            .then(r => {
-                if (!r.ok) throw new Error('Failed to load posts');
-                return r.json();
-            })
+            .then(r => r.json())
             .then(posts => {
                 allPosts = posts;
-                renderFeatured(posts);
+                renderFeatured(posts[0]);
                 renderCategories(posts);
                 renderPosts(posts);
             })
             .catch(() => {
                 document.getElementById('post-grid').innerHTML =
-                    '<div class="empty-state"><i class="fas fa-inbox"></i><h3>Chưa có bài viết nào</h3><p>Bài viết đầu tiên sẽ sớm được đăng tải.</p></div>';
-                document.getElementById('featured').innerHTML = '';
+                    '<div class="empty-state"><i class="fas fa-inbox"></i><h3>Chưa có bài viết nào</h3></div>';
             });
 
-        function renderFeatured(posts) {
-            const featured = posts[0];
-            if (!featured) return;
-            const el = document.getElementById('featured');
-            el.innerHTML = `<div class="featured-card">
-                <div class="featured-body">
-                    <span class="featured-badge">🔥 Nổi bật</span>
-                    <div class="meta">
-                        <span><i class="far fa-calendar"></i> ${featured.date}</span>
-                        <span><i class="fas fa-tag"></i> ${featured.tag}</span>
+        function renderFeatured(post) {
+            if (!post) return;
+            const el = document.getElementById('featured-post');
+            el.innerHTML = `
+                <img src="https://picsum.photos/600/400?random=${post.slug}" alt="${post.title}" class="featured-image">
+                <div class="featured-content">
+                    <span class="featured-badge"><i class="fas fa-star"></i> Noi bat</span>
+                    <h2 class="featured-title">${post.title}</h2>
+                    <p class="featured-excerpt">${post.description}</p>
+                    <div class="featured-meta">
+                        <span><i class="far fa-calendar"></i> ${post.date}</span>
+                        <span><i class="fas fa-tag"></i> ${post.tag}</span>
                     </div>
-                    <h2><a href="${featured.slug}.html">${featured.title}</a></h2>
-                    <p>${featured.description}</p>
-                    <a class="read-btn" href="${featured.slug}.html">Đọc ngay <i class="fas fa-arrow-right"></i></a>
+                    <a href="${post.slug}.html" class="featured-cta">
+                        Đọc bài viết <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-            </div>`;
+            `;
         }
 
         function renderCategories(posts) {
             const tags = [...new Set(posts.map(p => p.tag))];
-            const el = document.getElementById('category-filter');
+            const el = document.getElementById('filter-tabs');
             tags.forEach(t => {
-                const a = document.createElement('a');
-                a.href = '#';
-                a.setAttribute('data-cat', t);
-                a.innerHTML = `<i class="fas fa-folder"></i> ${t}`;
-                a.onclick = function(e) { filterByCategory(t, this); e.preventDefault(); };
-                el.appendChild(a);
+                const btn = document.createElement('button');
+                btn.className = 'filter-tab';
+                btn.setAttribute('data-cat', t);
+                btn.textContent = t;
+                btn.onclick = () => filterByCategory(t, btn);
+                el.appendChild(btn);
             });
         }
 
@@ -323,44 +811,28 @@
             }
             grid.innerHTML = posts.map(p => `
                 <article class="post-card">
-                    <div class="card-top">
-                        <span class="tag">${p.tag}</span>
-                        <span class="date"><i class="far fa-calendar-alt"></i> ${p.date}</span>
-                    </div>
-                    <h3><a href="${p.slug}.html">${p.title}</a></h3>
-                    <p>${p.description}</p>
-                    <div class="card-footer">
-                        <a class="read-more" href="${p.slug}.html">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
-                        <span class="read-time"><i class="far fa-clock"></i> ${Math.ceil(p.description.length / 200)} phút đọc</span>
+                    <img src="https://picsum.photos/400/250?random=${p.slug}" alt="${p.title}" class="post-image" loading="lazy">
+                    <div class="post-content">
+                        <span class="post-tag">${p.tag}</span>
+                        <h3><a href="${p.slug}.html" class="post-title">${p.title}</a></h3>
+                        <p class="post-excerpt">${p.description}</p>
+                        <div class="post-footer">
+                            <span class="post-date"><i class="far fa-calendar"></i> ${p.date}</span>
+                            <a href="${p.slug}.html" class="post-read">
+                                Đọc tiếp <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
             `).join('');
         }
 
-        function filterByCategory(cat, el) {
+        function filterByCategory(cat, btn) {
             currentCategory = cat;
-            document.querySelectorAll('#category-filter a').forEach(a => a.classList.remove('active'));
-            if (el) el.classList.add('active');
-            applyFilters();
-        }
-
-        function filterPosts(query) {
-            const q = query.toLowerCase().trim();
-            document.getElementById('featured').style.display = q ? 'none' : '';
-            if (!q) { applyFilters(); return; }
-            const filtered = allPosts.filter(p =>
-                p.title.toLowerCase().includes(q) ||
-                p.description.toLowerCase().includes(q) ||
-                p.tag.toLowerCase().includes(q)
-            );
-            renderPosts(filtered);
-        }
-
-        function applyFilters() {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
             let filtered = allPosts;
-            if (currentCategory !== 'all') {
-                filtered = filtered.filter(p => p.tag === currentCategory);
-            }
+            if (cat !== 'all') filtered = filtered.filter(p => p.tag === cat);
             renderPosts(filtered);
         }
     </script>

@@ -322,68 +322,325 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
     <title>{title} - {site_title}</title>
     <meta name="description" content="{description}">
     <meta name="keywords" content="AI, {tag}, ChatGPT, Claude, Gemini, công nghệ, trí tuệ nhân tạo, chatbot, automation">
-    <meta name="author" content="Ninh Hòa Blog">
+    <meta name="author" content="Ninh Hoa Blog">
     <link rel="canonical" href="{canonical}">
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
-    <meta property="og:image" content="https://picsum.photos/800/400?random={slug}">
+    <meta property="og:image" content="https://picsum.photos/1200/630?random={slug}">
     <meta property="og:locale" content="{og_locale}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{article_url}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        :root {{
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-500: #64748b;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --white: #ffffff;
+        }}
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: 'Inter', -apple-system, sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.8; }}
-        .article-header {{ background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f3460 100%); color: white; padding: 24px 20px; text-align: center; }}
-        .article-header a {{ color: #38bdf8; text-decoration: none; font-weight: 500; }}
-        .container {{ max-width: 750px; margin: 40px auto 60px; padding: 0 20px; }}
-        .article {{ background: white; border-radius: 20px; padding: 45px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }}
-        .article h1 {{ font-size: 2em; margin-bottom: 10px; line-height: 1.3; }}
-        .article .meta {{ display: flex; gap: 16px; color: #64748b; font-size: 0.9em; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9; }}
-        .article .meta i {{ margin-right: 4px; }}
-        .article .featured-image {{ margin-bottom: 30px; border-radius: 12px; overflow: hidden; }}
-        .article .featured-image img {{ width: 100%; height: auto; display: block; }}
-        .article p {{ margin-bottom: 18px; color: #475569; }}
-        .article h2 {{ font-size: 1.4em; margin: 35px 0 15px; color: #0f172a; }}
-        .article h3 {{ font-size: 1.15em; margin: 25px 0 12px; color: #1e293b; }}
-        .article ul, .article ol {{ margin: 0 0 18px 24px; color: #475569; }}
-        .article li {{ margin-bottom: 8px; }}
-        .article strong {{ color: #0f172a; }}
-        .article .highlight {{ background: #eef2ff; border-left: 4px solid #4338ca; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; color: #1e293b; font-weight: 500; }}
-        .article a {{ color: #2563eb; }}
-        .share-section {{ margin-top: 40px; padding-top: 25px; border-top: 1px solid #f1f5f9; }}
-        .share-section p {{ font-weight: 600; color: #0f172a; margin-bottom: 12px; font-size: 0.95em; }}
-        .share-buttons {{ display: flex; gap: 10px; flex-wrap: wrap; }}
-        .share-btn {{ display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; color: white; transition: opacity 0.2s; }}
-        .share-btn:hover {{ opacity: 0.85; }}
+        body {{ font-family: 'Inter', -apple-system, sans-serif; background: var(--gray-100); color: var(--gray-900); line-height: 1.7; -webkit-font-smoothing: antialiased; }}
+        a {{ color: var(--primary); text-decoration: none; }}
+        a:hover {{ color: var(--primary-dark); }}
+
+        .article-header {{
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-300);
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }}
+        .header-left {{ display: flex; align-items: center; gap: 12px; }}
+        .logo {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gray-900);
+        }}
+        .logo-icon {{
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2563eb, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 12px;
+        }}
+        .header-nav {{ display: flex; align-items: center; gap: 24px; }}
+        .header-nav a {{
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            transition: color 0.2s;
+        }}
+        .header-nav a:hover, .header-nav a.active {{ color: var(--primary); }}
+        .lang-switch {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--gray-100);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: background 0.2s;
+        }}
+        .lang-switch:hover {{ background: var(--gray-300); }}
+
+        .article-hero {{
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 24px 40px;
+            text-align: center;
+        }}
+        .article-hero-inner {{ max-width: 750px; margin: 0 auto; }}
+        .article-tag {{
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }}
+        .article-hero h1 {{
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }}
+        .article-meta {{
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }}
+        .article-meta span {{ display: flex; align-items: center; gap: 6px; }}
+
+        .article-container {{
+            max-width: 750px;
+            margin: -30px auto 60px;
+            padding: 0 24px;
+            position: relative;
+        }}
+        .article {{
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--gray-300);
+        }}
+        .article-featured-image {{
+            margin-bottom: 32px;
+            border-radius: 12px;
+            overflow: hidden;
+        }}
+        .article-featured-image img {{
+            width: 100%;
+            height: auto;
+            display: block;
+        }}
+        .article p {{
+            margin-bottom: 20px;
+            color: var(--gray-700);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }}
+        .article h2 {{
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin: 40px 0 16px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-100);
+        }}
+        .article h2:first-child {{ margin-top: 0; padding-top: 0; border-top: none; }}
+        .article h3 {{
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: 30px 0 12px;
+        }}
+        .article ul, .article ol {{
+            margin: 0 0 20px 24px;
+            color: var(--gray-700);
+        }}
+        .article li {{
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }}
+        .article strong {{ color: var(--gray-900); font-weight: 600; }}
+        .article .highlight {{
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+            color: var(--gray-900);
+            font-weight: 500;
+        }}
+        .article .highlight strong {{ display: block; margin-bottom: 8px; color: var(--primary); }}
+
+        .share-section {{
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray-100);
+        }}
+        .share-section p {{
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }}
+        .share-buttons {{ display: flex; gap: 12px; flex-wrap: wrap; }}
+        .share-btn {{
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            transition: all 0.2s;
+        }}
+        .share-btn:hover {{ transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }}
         .share-btn.zalo {{ background: #0068FF; }}
         .share-btn.facebook {{ background: #1877F2; }}
         .share-btn.twitter {{ background: #1DA1F2; }}
-        .footer {{ text-align: center; padding: 30px; color: #94a3b8; font-size: 0.85em; }}
-        .lang-switch {{ display: inline-block; background: #eef2ff; color: #4338ca; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; margin-top: 10px; }}
-        @media (max-width: 600px) {{ .article {{ padding: 24px; }} .article h1 {{ font-size: 1.4em; }} .share-buttons {{ flex-direction: column; }} }}
+
+        .related-section {{
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray-100);
+        }}
+        .related-section h3 {{
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }}
+        .related-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }}
+        .related-card {{
+            display: block;
+            background: var(--gray-100);
+            border: 1px solid var(--gray-300);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.2s;
+        }}
+        .related-card:hover {{
+            background: var(--gray-100);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }}
+        .related-card h4 {{
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }}
+        .related-tag {{
+            display: inline-block;
+            background: #e0e7ff;
+            color: #4338ca;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }}
+
+        .article-footer {{
+            text-align: center;
+            padding: 40px 24px;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--gray-300);
+            margin-top: 60px;
+            background: var(--white);
+        }}
+        .article-footer a {{
+            color: var(--primary);
+            font-weight: 500;
+        }}
+
+        @media (max-width: 600px) {{
+            .article-header {{ height: auto; padding: 12px 16px; flex-direction: column; gap: 12px; }}
+            .header-nav {{ display: none; }}
+            .article-hero h1 {{ font-size: 1.6rem; }}
+            .article-meta {{ flex-wrap: wrap; gap: 12px; }}
+            .article {{ padding: 24px; }}
+            .article h1 {{ font-size: 1.6rem; }}
+            .share-buttons {{ flex-direction: column; }}
+            .article-featured-image {{ margin-bottom: 24px; }}
+        }}
     </style>
 </head>
 <body>
-    <div class="article-header">
-        <p><a href="{home_link}">{back_text}</a></p>
-        <a class="lang-switch" href="{'/en/' if lang == 'vi' else ''}{slug}.html">
-            <i class="fas fa-globe"></i> {'English' if lang == 'vi' else 'Tiếng Việt'}
+    <header class="article-header">
+        <div class="header-left">
+            <a href="{home_link}" class="logo">
+                <div class="logo-icon">AI</div>
+                <span>Ninh<span style="color: var(--primary);">Ho</span>a Blog</span>
+            </a>
+            <nav class="header-nav">
+                <a href="{home_link}">Trang chu</a>
+                <a href="{home_link}about.html">Gioi thieu</a>
+            </nav>
+        </div>
+        <a class="lang-switch" href="{{'/en/' if lang == 'vi' else ''}}{slug}.html">
+            <i class="fas fa-globe"></i> {{'English' if lang == 'vi' else 'Tiếng Việt'}}
         </a>
-    </div>
-    <div class="container">
-        <div class="article">
+    </header>
+
+    <section class="article-hero">
+        <div class="article-hero-inner">
+            <span class="article-tag">{tag}</span>
             <h1>{title}</h1>
-            <div class="meta">
+            <div class="article-meta">
                 <span><i class="far fa-calendar"></i> {date_str}</span>
                 <span><i class="fas fa-tag"></i> {tag}</span>
                 <span><i class="far fa-clock"></i> {read_time}</span>
             </div>
-            <div class="featured-image"><img src="https://picsum.photos/800/400?random={slug}" alt="{title}" loading="lazy"></div>
+        </div>
+    </section>
+
+    <div class="article-container">
+        <article class="article">
+            <div class="article-featured-image">
+                <img src="https://picsum.photos/1200/630?random={slug}" alt="{title}" loading="lazy">
+            </div>
             {body_html}
+
             <div class="share-section">
                 <p>{share_text}</p>
                 <div class="share-buttons">
@@ -398,12 +655,13 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
                     </a>
                 </div>
             </div>
-        </div>
+        </article>
     </div>
-    <div class="footer">
-        <p>&copy; 2025 Ninh Hòa Blog. {footer_text}</p>
-        <p><a href="{home_link}" style="color:#2563eb;">{'← Về trang chủ' if lang == 'vi' else '← Back to home'}</a></p>
-    </div>
+
+    <footer class="article-footer">
+        <p>&copy; 2025 Ninh Hoa Blog. Tu dong van hanh boi AI.</p>
+        <p><a href="{home_link}">← Ve trang chu</a></p>
+    </footer>
 </body>
 </html>"""
 
