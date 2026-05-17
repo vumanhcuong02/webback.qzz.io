@@ -22,6 +22,8 @@
         .article h1 { font-size: 2em; margin-bottom: 10px; line-height: 1.3; }
         .article .meta { display: flex; gap: 16px; color: #64748b; font-size: 0.9em; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9; }
         .article .meta i { margin-right: 4px; }
+        .article .featured-image { margin-bottom: 30px; border-radius: 12px; overflow: hidden; }
+        .article .featured-image img { width: 100%; height: auto; display: block; }
         .article p { margin-bottom: 18px; color: #475569; }
         .article h2 { font-size: 1.4em; margin: 35px 0 15px; color: #0f172a; }
         .article h3 { font-size: 1.15em; margin: 25px 0 12px; color: #1e293b; }
@@ -30,6 +32,15 @@
         .article strong { color: #0f172a; }
         .article .highlight { background: #eef2ff; border-left: 4px solid #4338ca; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; color: #1e293b; font-weight: 500; }
         .article a { color: #2563eb; }
+        
+        .share-section {{ margin-top: 40px; padding-top: 25px; border-top: 1px solid #f1f5f9; }}
+        .share-section p {{ font-weight: 600; color: #0f172a; margin-bottom: 12px; font-size: 0.95em; }}
+        .share-buttons {{ display: flex; gap: 10px; flex-wrap: wrap; }}
+        .share-btn {{ display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; color: white; transition: opacity 0.2s; }}
+        .share-btn:hover {{ opacity: 0.85; }}
+        .share-btn.zalo {{ background: #0068FF; }}
+        .share-btn.facebook {{ background: #1877F2; }}
+        .share-btn.twitter {{ background: #1DA1F2; }}
         .footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.85em; }
         .lang-switch { display: inline-block; background: #eef2ff; color: #4338ca; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; margin-top: 10px; }
         @media (max-width: 600px) { .article { padding: 24px; } .article h1 { font-size: 1.4em; } }
@@ -51,6 +62,7 @@
                 <span><i class="far fa-clock"></i> 4 phút đọc</span>
             </div>
 
+            <div class="featured-image"><img src="https://picsum.photos/800/400?random=gioi-thieu-phan-tich-du-lieu-bang-ai" alt="Giới Thiệu Về Phân Tích Dữ Liệu Bằng AI" loading="lazy"></div>
             <h2>Phân Tích Dữ Liệu Bằng AI Là Gì?</h2>
             <p>Phân tích dữ liệu bằng AI là quá trình sử dụng trí tuệ nhân tạo để xử lý, phân tích và rút ra insights từ các tập dữ liệu lớn. Thay vì phương pháp truyền thống đòi hỏi nhiều thời gian và công sức, AI có thể tự động hóa quy trình này với độ chính xác cao hơn.</p>
 
@@ -100,6 +112,21 @@
 
             <div class="highlight">
                 <strong>Tóm lại:</strong> Phân tích dữ liệu bằng AI là xu hướng tất yếu trong thời đại số. Việc nắm vững các công cụ này sẽ giúp bạn và doanh nghiệp đưa ra quyết định nhanh chóng và chính xác hơn.
+            </div>
+
+            <div class="share-section">
+                <p>Chia sẻ bài viết</p>
+                <div class="share-buttons">
+                    <a href="https://zalo.me/share?url=https://webback.qzz.io/gioi-thieu-phan-tich-du-lieu-bang-ai.html" target="_blank" rel="noopener" class="share-btn zalo">
+                        <i class="fab fa-zalo"></i> Zalo
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://webback.qzz.io/gioi-thieu-phan-tich-du-lieu-bang-ai.html" target="_blank" rel="noopener" class="share-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://webback.qzz.io/gioi-thieu-phan-tich-du-lieu-bang-ai.html&text=Giới Thiệu Về Phân Tích Dữ Liệu Bằng AI" target="_blank" rel="noopener" class="share-btn twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </div>
             </div>
         </div>
     </div>
