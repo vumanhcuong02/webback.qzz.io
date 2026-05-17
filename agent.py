@@ -125,27 +125,31 @@ def call_nvidia(prompt, lang="vi"):
     import ssl
 
     system_prompt = (
-        "Bạn là một blogger công nghệ chuyên nghiệp người Việt Nam. VIẾT BÀI BLOG HOÀN TOÀN BẰNG TIẾNG VIỆT, tự nhiên như người Việt viết, 400-600 từ.\n\n"
+        "Bạn là một blogger công nghệ người Việt Nam. VIẾT BÀI BLOG HOÀN TOÀN BẰNG TIẾNG VIỆT, giọng văn thân thiện như đang trò chuyện với người bạn, 450-650 từ.\n\n"
         "QUY TẮC NGHIÊM NGẶT:\n"
-        "1. Viết giọng văn tự nhiên, thân thiện, có cảm xúc\n"
-        "2. Dùng h2 cho tiêu đề phụ, h3 cho mục nhỏ hơn\n"
-        "3. Dùng **text** để in đậm từ khóa quan trọng\n"
-        "4. Dùng - cho bullet points (ví dụ: - Lợi ích chính)\n"
-        "5. Highlight box (kết luận) đặt cuối bài, bắt đầu bằng '💡' hoặc '**Kết luận**'\n"
-        "6. KHÔNG dùng dấu === hoặc --- làm divider\n"
-        "7. KHÔNG dùng tiếng Anh trong nội dung (chỉ tên công cệ nổi tiếng như ChatGPT, Claude được giữ nguyên)\n"
-        "8. Mỗi đoạn 2-4 câu, không quá dài\n\n"
+        "1. KHÔNG bắt đầu bằng 'Trong bài viết này' hay 'Hôm nay chúng ta'\n"
+        "2. Bắt đầu bằng một câu hỏi, số liệu thú vị, hoặc tình huống cụ thể\n"
+        "3. Dùng h2 cho tiêu đề phụ, h3 cho mục nhỏ hơn\n"
+        "4. Dùng **text** để in đậm từ khóa quan trọng\n"
+        "5. Dùng - cho bullet points (ví dụ: - Lợi ích chính)\n"
+        "6. Đặt highlight box (kết luận) cuối bài, bắt đầu bằng '💡'\n"
+        "7. KHÔNG dùng dấu === hoặc --- làm divider\n"
+        "8. KHÔNG dùng tiếng Anh trong nội dung (trừ tên công cụ như ChatGPT, Claude)\n"
+        "9. Mỗi đoạn 2-4 câu, ngắn gọn\n"
+        "10. Thêm một câu chốt hấp dẫn ở đầu bài\n\n"
         "CHỦ ĐỀ: " if lang == "vi" else
-        "You are a professional US tech blogger. Write COMPLETELY IN ENGLISH, 400-600 words, natural and engaging.\n\n"
+        "You are a friendly US tech blogger. Write COMPLETELY IN ENGLISH, 450-650 words, conversational and engaging like talking to a friend.\n\n"
         "STRICT RULES:\n"
-        "1. Write in natural, conversational American English tone\n"
-        "2. Use h2 for subtitles, h3 for sub-sections\n"
-        "3. Use **text** to bold key terms\n"
-        "4. Use - for bullet points\n"
-        "5. End with highlight box starting with '💡' or '**Conclusion**'\n"
-        "6. NO === or --- separators\n"
-        "7. NEVER mix in Vietnamese\n"
-        "8. Keep paragraphs 2-4 sentences short\n\n"
+        "1. NEVER start with 'In this article' or 'Today we will'\n"
+        "2. Start with a question, interesting fact, or specific scenario\n"
+        "3. Use h2 for subtitles, h3 for sub-sections\n"
+        "4. Use **text** to bold key terms\n"
+        "5. Use - for bullet points\n"
+        "6. End with highlight box starting with '💡'\n"
+        "7. NO === or --- separators\n"
+        "8. NEVER mix in Vietnamese\n"
+        "9. Keep paragraphs 2-4 sentences short\n"
+        "10. Add an engaging hook sentence at the start\n\n"
         "TOPIC: "
     )
     full_prompt = f"{system_prompt}{prompt}\n\nWrite a complete blog post."
@@ -315,12 +319,16 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} - {site_title}</title>
     <meta name="description" content="{description}">
+    <meta name="keywords" content="AI, {tag}, ChatGPT, Claude, Gemini, công nghệ, trí tuệ nhân tạo, chatbot, automation">
+    <meta name="author" content="Ninh Hòa Blog">
     <link rel="canonical" href="{canonical}">
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
+    <meta property="og:image" content="https://picsum.photos/800/400?random={slug}">
     <meta property="og:locale" content="{og_locale}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{article_url}">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -372,7 +380,7 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
                 <span><i class="fas fa-tag"></i> {tag}</span>
                 <span><i class="far fa-clock"></i> {read_time}</span>
             </div>
-            <div class="featured-image"><img src="https://picsum.photos/800/400?random={slug}" alt="{title}"></div>
+            <div class="featured-image"><img src="https://picsum.photos/800/400?random={slug}" alt="{title}" loading="lazy"></div>
             {body_html}
             <div class="share-section">
                 <p>{share_text}</p>
