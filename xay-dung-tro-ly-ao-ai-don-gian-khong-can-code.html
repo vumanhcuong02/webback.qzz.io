@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code - Ninh Hoa Blog - Technology & AI</title>
-    <meta name="description" content="Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code
-Building a simple AI chatbot without code may seem like a daunting task, nhưng với sự phát triển của công nghệ, gi">
+    <title>Cách Xây Dựng Chatbot AI Đơn Giản Không Cần Code (2025 Guide)</title>
+    <meta name="description" content="Hướng dẫn tạo chatbot AI không cần code: so sánh nền tảng, các bước setup, và ví dụ triển khai. Phù hợp cho SMEs và cá nhân muốn tự động hóa hỗ trợ khách hàng.">
+    <meta name="keywords" content="tạo chatbot AI, chatbot không code, AI assistant, no-code chatbot, automation">
     <link rel="canonical" href="https://webback.qzz.io/en/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code.html">
-    <meta property="og:title" content="Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code">
-    <meta property="og:description" content="Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code
-Building a simple AI chatbot without code may seem like a daunting task, nhưng với sự phát triển của công nghệ, gi">
+    <meta property="og:title" content="Cách Xây Dựng Chatbot AI Đơn Giản Không Cần Code (2025 Guide)">
+    <meta property="og:description" content="Hướng dẫn tạo chatbot AI không cần code: so sánh nền tảng, các bước setup, và ví dụ triển khai. Phù hợp cho SMEs và cá nhân muốn tự động hóa hỗ trợ khách hàng.">
     <meta property="og:locale" content="en_US">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,7 +34,23 @@ Building a simple AI chatbot without code may seem like a daunting task, nhưng 
         .article .highlight { background: #eef2ff; border-left: 4px solid #4338ca; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 25px 0; color: #1e293b; font-weight: 500; }
         .article a { color: #2563eb; }
         
+        
+        .related-section { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f5f9; }
+        .related-section h3 { font-size: 1.2em; color: #0f172a; margin-bottom: 20px; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .related-card { display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; text-decoration: none; transition: all 0.2s; }
+        .related-card:hover { background: #eef2ff; border-color: #c7d2fe; transform: translateY(-2px); }
+        .related-card h4 { color: #1e293b; font-size: 0.95em; margin-bottom: 8px; line-height: 1.4; }
+        .related-tag { display: inline-block; background: #e0e7ff; color: #4338ca; font-size: 0.7em; padding: 2px 8px; border-radius: 4px; }
         .share-section {{ margin-top: 40px; padding-top: 25px; border-top: 1px solid #f1f5f9; }}
+        
+        .related-section { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f5f9; }
+        .related-section h3 { font-size: 1.2em; color: #0f172a; margin-bottom: 20px; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .related-card { display: block; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; text-decoration: none; transition: all 0.2s; }
+        .related-card:hover { background: #eef2ff; border-color: #c7d2fe; transform: translateY(-2px); }
+        .related-card h4 { color: #1e293b; font-size: 0.95em; margin-bottom: 8px; line-height: 1.4; }
+        .related-tag { display: inline-block; background: #e0e7ff; color: #4338ca; font-size: 0.7em; padding: 2px 8px; border-radius: 4px; }
         .share-section p {{ font-weight: 600; color: #0f172a; margin-bottom: 12px; font-size: 0.95em; }}
         .share-buttons {{ display: flex; gap: 10px; flex-wrap: wrap; }}
         .share-btn {{ display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; color: white; transition: opacity 0.2s; }}
@@ -47,6 +62,8 @@ Building a simple AI chatbot without code may seem like a daunting task, nhưng 
         .lang-switch { display: inline-block; background: #eef2ff; color: #4338ca; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; margin-top: 10px; }
         @media (max-width: 600px) { .article { padding: 24px; } .article h1 { font-size: 1.4em; } }
     </style>
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cách Xây Dựng Chatbot AI Đơn Giản Không Cần Code (2025 Guide)", "description": "Hướng dẫn tạo chatbot AI không cần code: so sánh nền tảng, các bước setup, và ví dụ triển khai. Phù hợp cho SMEs và cá nhân muốn tự động hóa hỗ trợ khách hàng.", "image": "https://picsum.photos/1200/630?random=build-chatbot", "datePublished": "2026-05-16", "dateModified": "2026-05-16", "author": {"@type": "Organization", "name": "Ninh Hòa Blog", "url": "https://webback.qzz.io"}, "publisher": {"@type": "Organization", "name": "Ninh Hòa Blog", "logo": {"@type": "ImageObject", "url": "https://webback.qzz.io/logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://webback.qzz.io/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code"}, "url": "https://webback.qzz.io/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code"}
 </head>
 <body>
     <div class="article-header">
@@ -59,11 +76,11 @@ Building a simple AI chatbot without code may seem like a daunting task, nhưng 
         <div class="article">
             <h1>Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code</h1>
             <div class="meta">
-                <span><i class="far fa-calendar"></i> 2026-05-16</span>
+                <span class="author"><i class="fas fa-user"></i> Ninh Hòa Blog</span> • <span><i class="far fa-calendar"></i> 2026-05-16</span>
                 <span><i class="fas fa-tag"></i> AI News</span>
                 <span><i class="far fa-clock"></i> 3 phút đọc</span>
             </div>
-            <div class="featured-image"><img src="https://picsum.photos/800/400?random=xay-dung-tro-ly-ao-ai-don-gian-khong-can-code" alt="Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code" loading="lazy"></div>
+            <div class="featured-image"><img src="https://picsum.photos/1200/630?random=build-chatbot" alt="Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code" loading="lazy"></div>
             <h1>Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code</h1>
 <p>Building a simple AI chatbot without code may seem like a daunting task, nhưng với sự phát triển của công nghệ, giờ đây bạn có thể tạo ra một trợ lý ảo AI mà không cần có kiến thức lập trình chuyên sâu.</p>
 <h2>Giới Thiệu Về Trợ Lý Ảo AI</h2>
@@ -92,6 +109,22 @@ Building a simple AI chatbot without code may seem like a daunting task, nhưng 
 <p>**<strong>Highlight Box</strong>**</p>
 <p>> <strong>Bắt đầu xây dựng trợ lý ảo AI của bạn ngay hôm nay!</strong> Với các công cụ và nền tảng hiện đại, bạn có thể tạo ra một trợ lý ảo AI đơn giản và hiệu quả mà không cần có kiến thức lập trình chuyên sâu. Hãy thử nghiệm và khám phá các khả năng của trợ lý ảo AI để cải thiện trải nghiệm người dùng và tăng cường hiệu suất làm việc.</p>
 
+
+        <div class="related-section">
+            <h3>📚 Bài viết liên quan</h3>
+            <div class="related-grid">
+                <a href="loi-ich-cua-cau-lenh-prompt.html" class="related-card">
+            <h4>10+ Câu Lệnh Prompt</h4>
+            <span class="related-tag">Hướng dẫn AI</span>
+        </a><a href="tim-hieu-ve-cong-nghe-tao-anh-ai.html" class="related-card">
+            <h4>Tạo Ảnh Bằng AI</h4>
+            <span class="related-tag">Hướng dẫn AI</span>
+        </a><a href="gioi-thieu-claude-pro.html" class="related-card">
+            <h4>Claude Pro Review</h4>
+            <span class="related-tag">Review AI</span>
+        </a>
+            </div>
+        </div>
             <div class="share-section">
                 <p>Chia sẻ bài viết</p>
                 <div class="share-buttons">
