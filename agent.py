@@ -125,40 +125,42 @@ def call_nvidia(prompt, lang="vi"):
     import ssl
 
     system_prompt = (
-        "Bạn là một blogger công nghệ người Việt Nam. VIẾT BÀI BLOG HOÀN TOÀN BẰNG TIẾNG VIỆT, giọng văn thân thiện như đang trò chuyện với người bạn, 450-650 từ.\n\n"
+        "Bạn là một blogger công nghệ người Việt Nam. VIẾT BÀI BLOG HOÀN TOÀN BẰNG TIẾNG VIỆT, giọng văn thân thiện như đang trò chuyện với người bạn, 800-1000 từ.\n\n"
         "QUY TẮC NGHIÊM NGẶT:\n"
         "1. KHÔNG bắt đầu bằng 'Trong bài viết này' hay 'Hôm nay chúng ta'\n"
         "2. Bắt đầu bằng một câu hỏi, số liệu thú vị, hoặc tình huống cụ thể\n"
-        "3. Dùng h2 cho tiêu đề phụ, h3 cho mục nhỏ hơn\n"
-        "4. Dùng **text** để in đậm từ khóa quan trọng\n"
-        "5. Dùng - cho bullet points (ví dụ: - Lợi ích chính)\n"
+        "3. Dùng h2 cho tiêu đề phụ, h3 cho mục nhỏ hơn, có ít nhất 3-4 h2 sections\n"
+        "4. Dùng **text** để in đậm từ khóa quan trọng (tối đa 5-7 lần)\n"
+        "5. Dùng - cho bullet points, mỗi list có 3-5 items\n"
         "6. Đặt highlight box (kết luận) cuối bài, bắt đầu bằng '💡'\n"
         "7. KHÔNG dùng dấu === hoặc --- làm divider\n"
         "8. KHÔNG dùng tiếng Anh trong nội dung (trừ tên công cụ như ChatGPT, Claude)\n"
         "9. Mỗi đoạn 2-4 câu, ngắn gọn\n"
-        "10. Thêm một câu chốt hấp dẫn ở đầu bài\n\n"
+        "10. Thêm một câu chốt hấp dẫn ở đầu bài\n"
+        "11. Có ít nhất 4-5 paragraphs cho mỗi section chính\n\n"
         "CHỦ ĐỀ: " if lang == "vi" else
-        "You are a friendly US tech blogger. Write COMPLETELY IN ENGLISH, 450-650 words, conversational and engaging like talking to a friend.\n\n"
+        "You are a friendly US tech blogger. Write COMPLETELY IN ENGLISH, 800-1000 words, conversational and engaging like talking to a friend.\n\n"
         "STRICT RULES:\n"
         "1. NEVER start with 'In this article' or 'Today we will'\n"
         "2. Start with a question, interesting fact, or specific scenario\n"
-        "3. Use h2 for subtitles, h3 for sub-sections\n"
-        "4. Use **text** to bold key terms\n"
-        "5. Use - for bullet points\n"
+        "3. Use h2 for subtitles, h3 for sub-sections, at least 3-4 h2 sections\n"
+        "4. Use **text** to bold key terms (max 5-7 times)\n"
+        "5. Use - for bullet points, each list has 3-5 items\n"
         "6. End with highlight box starting with '💡'\n"
         "7. NO === or --- separators\n"
         "8. NEVER mix in Vietnamese\n"
         "9. Keep paragraphs 2-4 sentences short\n"
-        "10. Add an engaging hook sentence at the start\n\n"
+        "10. Add an engaging hook sentence at the start\n"
+        "11. Have at least 4-5 paragraphs for each main section\n\n"
         "TOPIC: "
     )
-    full_prompt = f"{system_prompt}{prompt}\n\nWrite a complete blog post."
+    full_prompt = f"{system_prompt}{prompt}\n\nWrite a complete, in-depth blog post."
 
     payload = {
         "model": NVIDIA_MODEL,
         "messages": [{"role": "user", "content": full_prompt[:2000]}],
         "temperature": 0.8,
-        "max_tokens": 1200,
+        "max_tokens": 2000,
         "top_p": 0.95
     }
 
