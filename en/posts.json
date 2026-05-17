@@ -2,36 +2,43 @@
   {
     "title": "Introduction to ChatGPT and Claude",
     "slug": "introduction-to-chatgpt-and-claude",
-    "tag": "AI News",
+    "tag": "AI Comparison",
     "date": "2026-05-17",
-    "description": "What if you could have a conversation with a machine that felt almost human-like, understanding your context and responding with accuracy and wit? The world of artificial intelligence has made tremend"
+    "description": "A detailed comparison of ChatGPT and Claude - the two most popular AI chatbots today."
   },
   {
     "title": "Introduction to AI Writing Tools",
     "slug": "introduction-to-ai-writing-tools",
-    "tag": "AI Review",
+    "tag": "AI Tutorial",
     "date": "2026-05-17",
-    "description": "What if you could create high-quality content in a fraction of the time it takes now, without sacrificing quality or authenticity? Imagine being able to focus on the creative aspects of writing, while"
+    "description": "Best AI writing tools for bloggers and content creators to boost productivity."
   },
   {
-    "title": "Introduction to AI Chrome Extensions",
-    "slug": "introduction-to-ai-chrome-extensions",
+    "title": "AI in Digital Marketing: A Complete Guide",
+    "slug": "ai-in-digital-marketing",
     "tag": "AI News",
-    "date": "2026-05-16",
-    "description": "Introduction to AI Chrome Extensions\nThe world of technology is rapidly evolving, and artificial intelligence (AI) is at the forefront of this revolution. One of the most significant impacts of AI can"
+    "date": "2026-05-17",
+    "description": "How AI is transforming digital marketing and the key applications you should know."
   },
   {
     "title": "10 Best Prompts for Office Workers: Boost Productivity with AI",
     "slug": "10-best-prompts-for-office-workers-boost-productivity-with-ai",
     "tag": "AI Tutorial",
     "date": "2026-05-16",
-    "description": "10 Best Prompts for Office Workers: Boost Productivity with AI  \n\nIntroduction  \nIn today’s fast‑paced work environment, office workers constantly look for ways to save time and stay organized. AI‑dri"
+    "description": "Practical AI prompts to help office workers save time and boost productivity."
   },
   {
-    "title": "ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2025?",
+    "title": "Introduction to AI Chrome Extensions",
+    "slug": "introduction-to-ai-chrome-extensions",
+    "tag": "AI Tips",
+    "date": "2026-05-16",
+    "description": "Best AI Chrome extensions to enhance your browsing experience and productivity."
+  },
+  {
+    "title": "ChatGPT vs Claude vs Gemini: Which AI is Best in 2025?",
     "slug": "chatgpt-vs-claude-vs-gemini",
     "tag": "AI Comparison",
     "date": "2025-05-15",
-    "description": "A detailed comparison of the three AI giants: ChatGPT, Claude, and Gemini. Strengths, weaknesses, and which one to choose for your work."
+    "description": "Detailed comparison of the three AI giants: ChatGPT, Claude, and Gemini."
   }
 ]

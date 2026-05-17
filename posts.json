@@ -1,86 +1,100 @@
 [
   {
-    "title": "Rủi ro khi sử dụng AI",
-    "slug": "rui-ro-khi-su-dung-ai",
-    "tag": "Review AI",
+    "title": "Giới thiệu ChatGPT và Claude",
+    "slug": "introduction-to-chatgpt-and-claude",
+    "tag": "So sánh AI",
     "date": "2026-05-17",
-    "description": "Bạn đã bao giờ tự hỏi liệu trí tuệ nhân tạo có thể thay đổi cuộc sống của chúng ta như thế nào? Theo một số liệu thú vị, hơn 70% các doanh nghiệp tại Việt Nam đã áp dụng công nghệ AI vào hoạt động kin"
+    "description": "So sánh chi tiết ChatGPT và Claude - hai chatbot AI phổ biến nhất hiện nay. Nên chọn công cụ nào?"
   },
   {
-    "title": "Tầm quan trọng của trí tuệ nhân tạo trong marketing",
+    "title": "Giới thiệu công cụ viết AI",
+    "slug": "introduction-to-ai-writing-tools",
+    "tag": "Hướng dẫn AI",
+    "date": "2026-05-17",
+    "description": "Tổng hợp các công cụ viết bài bằng AI tốt nhất cho blogger và content creator."
+  },
+  {
+    "title": "Tầm quan trọng của AI trong marketing",
     "slug": "tam-quan-trong-cua-tri-tue-nhan-tao-trong-marketing",
     "tag": "Tin tức AI",
     "date": "2026-05-17",
-    "description": "Trí tuệ nhân tạo đang trở thành một phần quan trọng của nhiều ngành công nghiệp, và ngành marketing cũng không phải là ngoại lệ. Sự phát triển của trí tuệ nhân tạo đã mang lại nhiều cơ hội mới cho các"
+    "description": "AI đang thay đổi cách marketing hoạt động. Khám phá những ứng dụng quan trọng nhất."
+  },
+  {
+    "title": "Rủi ro khi sử dụng AI",
+    "slug": "rui-ro-khi-su-dung-ai",
+    "tag": "Tin tức AI",
+    "date": "2026-05-17",
+    "description": "Những rủi ro khi dùng AI và cách phòng tránh để sử dụng AI an toàn và hiệu quả."
   },
   {
     "title": "Lợi ích của câu lệnh prompt",
     "slug": "loi-ich-cua-cau-lenh-prompt",
-    "tag": "Tin tức AI",
+    "tag": "Hướng dẫn AI",
     "date": "2026-05-16",
-    "description": "Khi nhắc đến công cụ hỗ trợ công việc, chúng ta thường nghĩ đến các phần mềm quản lý dự án hoặc các ứng dụng hỗ trợ văn phòng. Tuy nhiên, trong thời đại trí tuệ nhân tạo đang phát triển mạnh mẽ, các c"
+    "description": "10 câu lệnh prompt hữu ích nhất cho dân văn phòng giúp tăng năng suất với AI."
   },
   {
     "title": "Giới thiệu về Claude Pro",
     "slug": "gioi-thieu-ve-claude-pro",
+    "tag": "Review AI",
+    "date": "2026-05-16",
+    "description": "Trải nghiệm Claude Pro - công cụ AI mạnh mẽ cho viết content và phân tích ngôn ngữ."
+  },
+  {
+    "title": "5 thói quen giúp bạn tận dụng AI hiệu quả mỗi ngày",
+    "slug": "5-thoi-quen-giup-ban-tan-dung-ai-hieu-qua-moi-ngay",
     "tag": "Thủ thuật AI",
     "date": "2026-05-16",
-    "description": "Khi nhắc đến các trợ lý ảo, nhiều người thường nghĩ đến những cái tên như ChatGPT. Tuy nhiên, gần đây, tôi đã có cơ hội trải nghiệm Claude Pro, một công cụ được thiết kế để hỗ trợ người dùng trong nhi"
+    "description": "Những thói quen đơn giản giúp bạn khai thác AI hiệu quả hơn trong công việc hàng ngày."
   },
   {
-    "title": "Giới Thiệu Về Ứng Dụng AI Trong Kinh Doanh Online",
-    "slug": "gioi-thieu-ve-ung-dung-ai-trong-kinh-doanh-online",
+    "title": "Giới thiệu về Machine Learning",
+    "slug": "gioi-thieu-ve-machine-learning",
     "tag": "Tin tức AI",
     "date": "2026-05-16",
-    "description": "Giới Thiệu Về Ứng Dụng AI Trong Kinh Doanh Online\n\nKinh doanh online đang trở thành một phần quan trọng trong nền kinh tế số hiện nay. Việc ứng dụng công nghệ trí tuệ nhân tạo (AI) vào kinh doanh onli"
+    "description": "Machine Learning là gì? Tìm hiểu các khái niệm cơ bản về học máy và ứng dụng thực tế."
   },
   {
-    "title": "Xây Dựng Trợ Lý ảo AI Đơn Giản Không Cần Code",
+    "title": "Xây dựng trợ lý AI đơn giản không cần code",
     "slug": "xay-dung-tro-ly-ao-ai-don-gian-khong-can-code",
     "tag": "Hướng dẫn AI",
     "date": "2026-05-16",
-    "description": "Hướng dẫn xây dựng trợ lý ảo AI đơn giản không cần code. Tìm hiểu các công cụ và platforms giúp bạn tạo chatbot AI dễ dàng."
+    "description": "Hướng dẫn tạo chatbot AI đơn giản không cần biết lập trình, ai cũng làm được."
   },
   {
-    "title": "Giới thiệu về ứng dụng AI trên điện thoại",
+    "title": "Ứng dụng AI trên điện thoại",
     "slug": "gioi-thieu-ve-ung-dung-ai-tren-dien-thoai",
-    "tag": "So sánh AI",
-    "date": "2026-05-16",
-    "description": "Giới thiệu về ứng dụng AI trên điện thoại\nTrong thời đại công nghệ hiện nay, trí tuệ nhân tạo (AI) đã trở thành một phần quan trọng trong cuộc sống hàng ngày của chúng ta. Các ứng dụng AI trên điện th"
-  },
-  {
-    "title": "Giới Thiệu Về Machine Learning",
-    "slug": "gioi-thieu-ve-machine-learning",
     "tag": "Thủ thuật AI",
     "date": "2026-05-16",
-    "description": "Học Machine Learning Cơ Bản Với AI Hỗ Trợ: Một Bước Đến Thành Công\n====================================================================\n\nGiới Thiệu Về Machine Learning\n\nMachine learning (ML) là một lĩ"
+    "description": "Top ứng dụng AI trên điện thoại bạn nên dùng thử để tăng năng suất."
   },
   {
-    "title": "5 Thói Quen Giúp Bạn Tận Dụng AI Hiệu Quả Mỗi Ngày",
-    "slug": "5-thoi-quen-giup-ban-tan-dung-ai-hieu-qua-moi-ngay",
-    "tag": "Review AI",
+    "title": "Ứng dụng AI trong kinh doanh online",
+    "slug": "gioi-thieu-ve-ung-dung-ai-trong-kinh-doanh-online",
+    "tag": "Tin tức AI",
     "date": "2026-05-16",
-    "description": "5 Thói Quen Giúp Bạn Tận Dụng AI Hiệu Quả Mỗi Ngày\n\nKhám phá cách đưa trí tuệ nhân tạo vào cuộc sống và công việc một cách thông minh và hiệu quả nhất.\n\n---\n\nAI Đã Thay Đổi Cách Chúng Ta Làm Việc Như "
+    "description": "Cách ứng dụng AI vào kinh doanh online để tăng doanh số và giảm chi phí."
   },
   {
-    "title": "Giới Thiệu Claude Pro",
+    "title": "Giới thiệu Claude Pro",
     "slug": "gioi-thieu-claude-pro",
     "tag": "Review AI",
     "date": "2026-05-15",
-    "description": "Claude Pro là công cụ hỗ trợ viết nội dung thông minh với tự động hóa và phân tích ngôn ngữ. Có nên nâng cấp?"
+    "description": "Claude Pro - công cụ AI mạnh mẽ với khả năng phân tích ngôn ngữ tự nhiên."
   },
   {
-    "title": "Giới Thiệu Về Phân Tích Dữ Liệu Bằng AI",
-    "slug": "gioi-thieu-ve-phan-tich-du-lieu-bang-ai",
+    "title": "Giới thiệu về phân tích dữ liệu bằng AI",
+    "slug": "gioi-thieu-phan-tich-du-lieu-bang-ai",
     "tag": "Tin tức AI",
     "date": "2026-05-15",
-    "description": "Trong thời đại công nghệ số, phân tích dữ liệu bằng AI giúp tự động hóa quy trình, tiết kiệm thời gian và chi phí."
+    "description": "Phân tích dữ liệu bằng AI giúp tự động hóa quy trình, tiết kiệm thời gian."
   },
   {
-    "title": "ChatGPT vs Claude vs Gemini: Đâu là AI Chatbot tốt nhất 2025?",
+    "title": "ChatGPT vs Claude vs Gemini: Đâu là AI tốt nhất 2025?",
     "slug": "chatgpt-vs-claude-vs-gemini",
     "tag": "So sánh AI",
     "date": "2025-05-15",
-    "description": "So sánh chi tiết 3 ông lớn AI: ChatGPT, Claude và Gemini. Điểm mạnh, điểm yếu và nên chọn cái nào cho công việc."
+    "description": "So sánh chi tiết 3 ông lớn AI: ChatGPT, Claude và Gemini. Điểm mạnh, điểm yếu."
   }
 ]
