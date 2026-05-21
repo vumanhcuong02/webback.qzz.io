@@ -297,7 +297,7 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
                     in_list = False
             else:
                 if in_list: html_lines.append('</ul>'); in_list = False
-                if 'Kết luận' in line or 'Tóm lại' in line or 'Kết luận' in line or 'Conclusion' in line or 'Summary' in line:
+                if 'Kết luận' in line or 'Tóm lại' in line or 'Conclusion' in line or 'Summary' in line:
                     html_lines.append(f'<div class="highlight">{line}</div>')
                 else:
                     html_lines.append(f'<p>{line}</p>')
@@ -617,8 +617,8 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
                 <a href="{home_link}about.html">Gioi thieu</a>
             </nav>
         </div>
-        <a class="lang-switch" href="{{'/en/' if lang == 'vi' else ''}}{slug}.html">
-            <i class="fas fa-globe"></i> {{'English' if lang == 'vi' else 'Tiếng Việt'}}
+        <a class="lang-switch" href="{'/en/' if lang == 'vi' else '/'}{slug}.html">
+            <i class="fas fa-globe"></i> {'English' if lang == 'vi' else 'Tiếng Việt'}
         </a>
     </header>
 
