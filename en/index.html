@@ -578,6 +578,65 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* Mobile Nav */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+        }
+        .mobile-overlay.open { display: block; }
+        .mobile-nav-panel {
+            position: fixed;
+            top: 0; left: -280px;
+            width: 280px;
+            height: 100%;
+            background: var(--white);
+            z-index: 201;
+            padding: 24px;
+            transition: left 0.3s ease;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+        }
+        .mobile-nav-panel.open { left: 0; }
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        .mobile-nav-close {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-500);
+            padding: 8px;
+        }
+        .mobile-nav-links { list-style: none; }
+        .mobile-nav-links li { margin-bottom: 8px; }
+        .mobile-nav-links a {
+            display: block;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: background 0.2s;
+        }
+        .mobile-nav-links a:hover, .mobile-nav-links a.active {
+            background: var(--gray-100);
+            color: var(--primary);
+        }
+        .mobile-nav-links .lang-link {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-300);
+            color: var(--primary);
+        }
+
         @media (max-width: 900px) {
             .featured-card { grid-template-columns: 1fr; }
             .featured-image { height: 250px; min-height: auto; }
@@ -587,14 +646,25 @@
 
         @media (max-width: 600px) {
             .nav { display: none; }
-            .hero h1 { font-size: 2rem; }
-            .hero-stats { gap: 24px; }
-            .stat-number { font-size: 1.8rem; }
+            .mobile-menu { display: block; font-size: 1.5rem; color: var(--gray-700); cursor: pointer; padding: 8px; }
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 1.7rem; }
+            .hero p { font-size: 1rem; }
+            .hero-stats { gap: 16px; flex-wrap: wrap; }
+            .stat-number { font-size: 1.5rem; }
+            .stat-label { font-size: 0.8rem; }
             .section-header { flex-direction: column; gap: 16px; align-items: flex-start; }
-            .newsletter { padding: 32px 20px; }
+            .main { padding: 32px 16px 60px; }
+            .featured-content { padding: 24px; }
+            .featured-title { font-size: 1.3rem; }
+            .newsletter { padding: 24px 16px; }
             .newsletter-form { flex-direction: column; }
+            .newsletter-form input, .newsletter-form button { width: 100%; }
             .footer-inner { grid-template-columns: 1fr; gap: 32px; }
             .post-grid { grid-template-columns: 1fr; }
+            .post-card:hover { transform: none; box-shadow: none; }
+            .filter-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+            .filter-tab { white-space: nowrap; flex-shrink: 0; }
         }
     </style>
 </head>
@@ -612,6 +682,21 @@
                     <i class="fas fa-globe"></i> Tiếng Việt
                 </a>
             </nav>
+            <div class="mobile-menu" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+            <div class="mobile-nav-panel" id="mobile-nav-panel">
+                <div class="mobile-nav-header">
+                    <span style="font-weight:700;font-size:1.1rem;">Menu</span>
+                    <button class="mobile-nav-close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="/en/" class="active">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/" class="lang-link"><i class="fas fa-globe"></i> Tiếng Việt</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -793,6 +878,27 @@
             if (cat !== 'all') filtered = filtered.filter(p => p.tag === cat);
             renderPosts(filtered);
         }
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const overlay = document.getElementById('mobile-overlay');
+        const navPanel = document.getElementById('mobile-nav-panel');
+        const navClose = document.getElementById('mobile-nav-close');
+
+        function openMobileNav() {
+            overlay.classList.add('open');
+            navPanel.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileNav() {
+            overlay.classList.remove('open');
+            navPanel.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMobileNav);
+        navClose.addEventListener('click', closeMobileNav);
+        overlay.addEventListener('click', closeMobileNav);
     </script>
 </body>
 </html>

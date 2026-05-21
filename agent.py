@@ -593,15 +593,27 @@ def create_html_article(content, title, tag, date_str, slug, lang="vi"):
             font-weight: 500;
         }}
 
-        @media (max-width: 600px) {{
-            .article-header {{ height: auto; padding: 12px 16px; flex-direction: column; gap: 12px; }}
-            .header-nav {{ display: none; }}
+        @media (max-width: 768px) {{
+            .article-hero {{ padding: 40px 20px 30px; }}
             .article-hero h1 {{ font-size: 1.6rem; }}
-            .article-meta {{ flex-wrap: wrap; gap: 12px; }}
             .article {{ padding: 24px; }}
-            .article h1 {{ font-size: 1.6rem; }}
+            .article-container {{ margin-top: -20px; }}
             .share-buttons {{ flex-direction: column; }}
-            .article-featured-image {{ margin-bottom: 24px; }}
+        }}
+        @media (max-width: 600px) {{
+            .article-header {{ height: auto; padding: 12px 16px; }}
+            .header-nav {{ display: none; }}
+            .article-hero h1 {{ font-size: 1.4rem; }}
+            .article-hero-inner h1 {{ font-size: 1.4rem; }}
+            .article-meta {{ flex-wrap: wrap; gap: 8px; font-size: 0.8rem; }}
+            .article {{ padding: 20px; border-radius: 12px; }}
+            .article p {{ font-size: 0.95rem; }}
+            .article h2 {{ font-size: 1.25rem; }}
+            .article h3 {{ font-size: 1.1rem; }}
+            .share-buttons {{ flex-direction: column; }}
+            .share-btn {{ justify-content: center; }}
+            .article-featured-image {{ margin-bottom: 20px; }}
+            .related-grid {{ grid-template-columns: 1fr; }}
         }}
     </style>
 </head>

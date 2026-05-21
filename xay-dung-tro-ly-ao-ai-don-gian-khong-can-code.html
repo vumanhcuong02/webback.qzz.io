@@ -60,7 +60,23 @@
         .share-btn.twitter {{ background: #1DA1F2; }}
         .footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.85em; }
         .lang-switch { display: inline-block; background: #eef2ff; color: #4338ca; padding: 6px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85em; font-weight: 500; margin-top: 10px; }
-        @media (max-width: 600px) { .article { padding: 24px; } .article h1 { font-size: 1.4em; } }
+        @media (max-width: 768px) {
+        .article { padding: 28px; }
+        .article h1 { font-size: 1.5rem; }
+        .container { margin: 20px auto 40px; }
+    }
+    @media (max-width: 600px) {
+        .article-header { padding: 12px; }
+        .article { padding: 20px; border-radius: 12px; }
+        .article h1 { font-size: 1.2rem; }
+        .article p { font-size: 0.9rem; }
+        .article h2 { font-size: 1.15rem; }
+        .article .meta { flex-wrap: wrap; gap: 6px; font-size: 0.8rem; }
+        .container { margin: 10px auto 30px; padding: 0 12px; }
+        .article .featured-image { margin-bottom: 16px; }
+        .article .featured-image img { border-radius: 8px; }
+        .highlight { padding: 14px 16px; }
+    }
     </style>
 
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cách Xây Dựng Chatbot AI Đơn Giản Không Cần Code (2025 Guide)", "description": "Hướng dẫn tạo chatbot AI không cần code: so sánh nền tảng, các bước setup, và ví dụ triển khai. Phù hợp cho SMEs và cá nhân muốn tự động hóa hỗ trợ khách hàng.", "image": "https://picsum.photos/1200/630?random=build-chatbot", "datePublished": "2026-05-16", "dateModified": "2026-05-16", "author": {"@type": "Organization", "name": "Ninh Hòa Blog", "url": "https://webback.qzz.io"}, "publisher": {"@type": "Organization", "name": "Ninh Hòa Blog", "logo": {"@type": "ImageObject", "url": "https://webback.qzz.io/logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://webback.qzz.io/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code"}, "url": "https://webback.qzz.io/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code"}
