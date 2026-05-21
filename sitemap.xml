@@ -7,7 +7,6 @@
   </url>
   <url>
     <loc>https://webback.qzz.io/about.html</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,55 +16,73 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/chatgpt-vs-claude-vs-gemini.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-extension-ai.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/gioi-thieu-claude-pro.html</loc>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-viet-email-chuyen-nghiep.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/tim-hieu-ve-tri-tue-nhan-tao.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-chatgpt-va-claude.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-ai.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-tao-anh-ai.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-gemini-va-chatgpt.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/gioi-thieu-phan-tich-du-lieu-bang-ai.html</loc>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-ai-trong-kinh-doanh-online.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/gioi-thieu-ve-machine-learning.html</loc>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-ai-va-du-lieu-lon.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/gioi-thieu-ve-ung-dung-ai-tren-dien-thoai.html</loc>
+    <loc>https://webback.qzz.io/loi-ich-cua-ai-trong-kinh-doanh-online.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/gioi-thieu-ve-ung-dung-ai-trong-kinh-doanh-online.html</loc>
+    <loc>https://webback.qzz.io/tim-hieu-ve-cong-nghe-tao-anh-ai.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/5-thoi-quen-giup-ban-tan-dung-ai-hieu-qua-moi-ngay.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://webback.qzz.io/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://webback.qzz.io/loi-ich-cua-cau-lenh-prompt.html</loc>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-notion-ai.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -83,37 +100,73 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/gioi-thieu-ve-notion-ai.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://webback.qzz.io/loi-ich-cua-cau-lenh-prompt.html</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/tim-hieu-ve-cong-nghe-tao-anh-ai.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-claude-pro.html</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/loi-ich-cua-ai-trong-kinh-doanh-online.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://webback.qzz.io/5-thoi-quen-giup-ban-tan-dung-ai-hieu-qua-moi-ngay.html</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/en/chatgpt-vs-claude-vs-gemini.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-machine-learning.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/xay-dung-tro-ly-ao-ai-don-gian-khong-can-code.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-ung-dung-ai-tren-dien-thoai.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-ve-ung-dung-ai-trong-kinh-doanh-online.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-claude-pro.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/gioi-thieu-phan-tich-du-lieu-bang-ai.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/chatgpt-vs-claude-vs-gemini.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/en/introduction-to-ai-mistakes.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/en/10-best-prompts-for-office-workers-boost-productivity-with-ai.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://webback.qzz.io/en/introduction-to-ai-chrome-extensions.html</loc>
+    <loc>https://webback.qzz.io/en/introduction-to-chatgpt-and-claude.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -125,8 +178,20 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://webback.qzz.io/en/introduction-to-chatgpt-and-claude.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://webback.qzz.io/en/10-best-prompts-for-office-workers-boost-productivity-with-ai.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/en/introduction-to-ai-chrome-extensions.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://webback.qzz.io/en/chatgpt-vs-claude-vs-gemini.html</loc>
+    <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
