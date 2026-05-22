@@ -745,6 +745,7 @@ def git_push():
         os.chdir(LOCAL_DIR)
         subprocess.run(["git", "config", "user.email", "agent@ninhhoa.blog"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "config", "user.name", "AI Agent"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["git", "pull", "--rebase"], check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "add", "."], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "commit", "-m", f"AI agent: Them bai viet {datetime.now().strftime('%Y-%m-%d %H:%M')}"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         subprocess.run(["git", "push"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
