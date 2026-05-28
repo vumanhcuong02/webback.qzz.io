@@ -1,5 +1,12 @@
 [
   {
+    "title": "Giới thiệu về Prompt Engineering",
+    "slug": "gioi-thieu-ve-prompt-engineering",
+    "tag": "Tin tức AI",
+    "date": "2026-05-28",
+    "description": "Bạn đã bao giờ thử trò chuyện với một trợ lý ảo như ChatGPT hay Claude, nhưng cảm thấy chúng không hiểu đúng ý bạn? Có lẽ, bạn đã gõ lệnh sai hoặc không rõ ràng, khiến cho kết quả không như mong đợi. "
+  },
+  {
     "title": "Giới thiệu về trợ lý ảo",
     "slug": "gioi-thieu-ve-tro-ly-ao",
     "tag": "Hướng dẫn AI",
