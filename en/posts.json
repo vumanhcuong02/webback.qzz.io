@@ -1,5 +1,12 @@
 [
   {
+    "title": "Introduction to Machine Learning",
+    "slug": "introduction-to-machine-learning",
+    "tag": "AI Review",
+    "date": "2026-07-05",
+    "description": "What if you could build intelligent systems that learn and adapt without being explicitly programmed? This idea is not just the stuff of science fiction, but a reality thanks to Machine Learning. As a"
+  },
+  {
     "title": "Introduction to AI Tools",
     "slug": "introduction-to-ai-tools",
     "tag": "AI Review",
