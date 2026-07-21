@@ -1,5 +1,12 @@
 [
   {
+    "title": "Giới thiệu về học máy",
+    "slug": "gioi-thieu-ve-hoc-may",
+    "tag": "Thủ thuật AI",
+    "date": "2026-07-21",
+    "description": "Làm thế nào để bạn có thể xây dựng một mô hình học máy mà không cần phải là một chuyên gia về toán học và lập trình? Với sự phát triển của công nghệ trí tuệ nhân tạo, việc học và áp dụng machine learn"
+  },
+  {
     "title": "Giới thiệu về AI trong việc viết email",
     "slug": "gioi-thieu-ve-ai-trong-viec-viet-email",
     "tag": "Tin tức AI",
