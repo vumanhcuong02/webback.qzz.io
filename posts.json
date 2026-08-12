@@ -1,5 +1,12 @@
 [
   {
+    "title": "Tạo nền tảng",
+    "slug": "tao-nen-tang",
+    "tag": "Hướng dẫn AI",
+    "date": "2026-08-12",
+    "description": "Làm thế nào để tạo ra một trợ lý ảo có thể trò chuyện với bạn mà không cần biết bất kỳ dòng code nào? Đây là câu hỏi mà nhiều người đã đặt ra khi muốn tạo ra một chatbot AI đơn giản nhưng vẫn chưa biế"
+  },
+  {
     "title": "Tìm hiểu về chatbot AI",
     "slug": "tim-hieu-ve-chatbot-ai",
     "tag": "Tin tức AI",
